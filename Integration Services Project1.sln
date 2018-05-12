@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Integration Services Project1", "Integration Services Project1\Integration Services Project1.dtproj", "{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MultidimensionalProject1", "MultidimensionalProject1\MultidimensionalProject1.dwproj", "{83254E3A-139C-41DB-9931-29DC72A5A546}"
+EndProject
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "TabularProject1", "..\TabularProject1\TabularProject1\TabularProject1.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}.Development|x86.ActiveCfg = Development
+		{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}.Development|x86.Build.0 = Development
+		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.ActiveCfg = Development
+		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.Build.0 = Development
+		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.Deploy.0 = Development
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.ActiveCfg = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Build.0 = Development|x86
+		{8CE414BB-95B2-4C99-9E03-51BA72086E22}.Development|x86.Deploy.0 = Development|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E4F2B9E-E60F-4798-BF89-60209D4428C3}
+	EndGlobalSection
+EndGlobal
