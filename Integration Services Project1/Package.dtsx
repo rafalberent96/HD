@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="105"
-  DTS:VersionGUID="{F4A98E55-EE8D-4397-928F-C4395A07FB3A}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{0140F692-2446-4D34-B2B1-080895E9AEAE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -126,7 +126,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Date&quot;"
-              DTS:DTSID="{37F3CE02-4E8C-49C5-AE07-FBD0A4FE9DB1}"
+              DTS:DTSID="{A1DBEBF3-6E5E-4B5E-90A3-8DE6F2FEF591}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Channel&quot;"
-              DTS:DTSID="{49B00E5A-B68C-473F-A65E-1CB5322BC2F8}"
+              DTS:DTSID="{25D67370-75B9-4240-BDA3-18D70F41E666}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -142,7 +142,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Description&quot;"
-              DTS:DTSID="{5A1E3192-A0AD-47C2-8D84-972E65D6DD6A}"
+              DTS:DTSID="{90A69E65-4BB6-4B11-8D9A-0EF401B931CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -150,7 +150,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;2nd Description&quot;"
-              DTS:DTSID="{7DD6F360-4B67-41C0-92E6-E3650656C406}"
+              DTS:DTSID="{D0C0ABCB-0130-4343-8A09-202AE7499B7B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Start time&quot;"
-              DTS:DTSID="{C1C41AB0-6291-4DD5-9717-295ACF016C7F}"
+              DTS:DTSID="{F39F75B2-0148-49C9-BE69-02E55FD49B41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Duration&quot;"
-              DTS:DTSID="{B9EEBE37-16A9-4881-95A7-DF5B0F0BFE95}"
+              DTS:DTSID="{CA789DBA-5585-4729-908B-055E4810E1F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +174,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Variable Target&quot;"
-              DTS:DTSID="{B06C84E8-6C53-4029-B510-F59EC30AEB43}"
+              DTS:DTSID="{F51ED6A2-3A54-472C-B233-3B53C711A9F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -182,7 +182,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Total Individuals&quot;"
-              DTS:DTSID="{91A80C6D-CBC1-419C-99B0-5129D63350FE}"
+              DTS:DTSID="{5F63FE17-204A-4BE0-B097-6C776555B990}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -190,7 +190,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;Podgrupa&quot;"
-              DTS:DTSID="{4912E84C-A084-49F0-9551-E387F21E0C1E}"
+              DTS:DTSID="{9C1AF9F3-A9EC-4296-B431-C5BBCFCDF4EC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +198,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;A16-49&quot;"
-              DTS:DTSID="{C8A059C5-9968-4010-95D1-8D6C13FD4C05}"
+              DTS:DTSID="{93E7FEAE-2497-4D60-8DEA-6087DF46DE0F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -206,7 +206,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;M16-49&quot;"
-              DTS:DTSID="{81E813BD-CCF8-4889-9A99-95DBEA0630A5}"
+              DTS:DTSID="{FBDB127A-6355-45BA-B5C6-4341808F9FA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -214,7 +214,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;A4-15&quot;"
-              DTS:DTSID="{7D5D1C2C-9E1B-43DA-9C4E-2B836CD61732}"
+              DTS:DTSID="{E7431057-1ECC-449D-ABA9-2B7CD5C7B08C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -222,7 +222,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;A4-9&quot;"
-              DTS:DTSID="{B8DDE512-BC5F-4636-ACE4-D945BDF538E4}"
+              DTS:DTSID="{36458C29-A743-43FB-94B4-C477122EDC6D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -231,7 +231,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 13"
-              DTS:DTSID="{9C188F7A-3609-47AD-B42E-EE4EB6D1601A}"
+              DTS:DTSID="{B0396456-17A6-45BF-9E38-E029D9502020}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -942,7 +942,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[grupy_mediowe]</property>
+                  name="OpenRowset">[dbo].[STAGE_grupy_mediowe]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1067,7 +1067,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[target_groups]</property>
+                  name="OpenRowset">[dbo].[STAGE_target_groups]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1198,7 +1198,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[kategorie]</property>
+                  name="OpenRowset">[dbo].[STAGE_kategorie]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1735,7 +1735,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="Alter table [HD].[dbo].[dane]&#xA;Drop Column [Column 13]&#xA;&#xA;Declare  @Date varchar(100),@Channel varchar(100), @Description varchar(100), @2ndDescription varchar(100),@Starttime varchar(100), @Duration varchar(100),&#xA;&#x9;&#x9; @DateTmp varchar(100),@ChannelTmp varchar(100), @DescriptionTmp varchar(100), @2ndDescriptionTmp varchar(100),@StarttimeTmp varchar(100), @DurationTmp varchar(100);&#xA;&#xA;DECLARE update_cursor CURSOR FOR &#xA;SELECT [&quot;Date&quot;],[&quot;Channel&quot;],[&quot;Description&quot;],[&quot;2nd Description&quot;],[&quot;Start time&quot;],[&quot;Duration&quot;]&#xA;from [HD].[dbo].[dane]&#xA;&#xA;OPEN update_cursor&#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;if @Date !='' set @DateTmp = @Date;&#xA;update [HD].[dbo].[dane] set [&quot;Date&quot;] = @DateTmp where CURRENT of update_cursor; &#xA;if @Channel !=''  set @ChannelTmp = @Channel;&#xA;update [HD].[dbo].[dane] set [&quot;Channel&quot;] = @ChannelTmp where CURRENT of update_cursor; &#xA;if @Description !=''  set @DescriptionTmp = @Description;&#xA;update [HD].[dbo].[dane] set [&quot;Description&quot;] = @DescriptionTmp where CURRENT of update_cursor; &#xA;if @2ndDescription !=''  set @2ndDescriptionTmp = @2ndDescription;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = @2ndDescriptionTmp where CURRENT of update_cursor; &#xA;if @Starttime !=''  set @StarttimeTmp = @Starttime;&#xA;update [HD].[dbo].[dane] set [&quot;Start time&quot;] = @StarttimeTmp where CURRENT of update_cursor; &#xA;if @Duration !=''  set @DurationTmp = @Duration;&#xA;update [HD].[dbo].[dane] set [&quot;Duration&quot;] = @DurationTmp where CURRENT of update_cursor; &#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;END&#xA;close update_cursor&#xA;Deallocate update_cursor&#xA;GO&#xA;&#xA;&#xA;Drop table if exists [HD].[dbo].[grupy]&#xA;&#xA;CREATE TABLE [HD].[dbo].[grupy] (&#xA;    [Number] numeric(30) ,&#xA;    [Channel] varchar(30),&#xA;&#x9;[Group] varchar(30)&#xA;)&#xA;&#xA;Declare @Number numeric(10), @Channel varchar(30), @Group varchar(30);&#xA;DECLARE insert_cursor CURSOR FOR &#xA;SELECT [F1],[F2] from [HD].[dbo].[grupy_mediowe];&#xA;&#xA;OPEN insert_cursor&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NULL set @Group = @Channel;&#xA;&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;&#xA;Insert into [HD].[dbo].[grupy]&#xA;SELECT @Number,@Channel,@Group&#xA;&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NuLL set @Group = @Channel;&#xA;END&#xA;delete from [HD].[dbo].[grupy] where Number is NULL;&#xA;close insert_cursor&#xA;Deallocate insert_cursor&#xA;GO&#xA;&#xA;"
+          SQLTask:SqlStatementSource="Select * INTO [HD].[dbo].[STAGE_dane] FROM [HD].[dbo].[dane]&#xA;&#xA;Alter table [HD].[dbo].[dane]&#xA;Drop Column [Column 13]&#xA;&#xA;Declare  @Date varchar(100),@Channel varchar(100), @Description varchar(100), @2ndDescription varchar(100),@Starttime varchar(100), @Duration varchar(100),&#xA;&#x9;&#x9; @DateTmp varchar(100),@ChannelTmp varchar(100), @DescriptionTmp varchar(100), @2ndDescriptionTmp varchar(100),@StarttimeTmp varchar(100), @DurationTmp varchar(100);&#xA;&#xA;DECLARE update_cursor CURSOR FOR &#xA;SELECT [&quot;Date&quot;],[&quot;Channel&quot;],[&quot;Description&quot;],[&quot;2nd Description&quot;],[&quot;Start time&quot;],[&quot;Duration&quot;]&#xA;from [HD].[dbo].[dane]&#xA;&#xA;OPEN update_cursor&#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;if @Date !='' set @DateTmp = @Date;&#xA;update [HD].[dbo].[dane] set [&quot;Date&quot;] = @DateTmp where CURRENT of update_cursor; &#xA;if @Channel !=''  set @ChannelTmp = @Channel;&#xA;update [HD].[dbo].[dane] set [&quot;Channel&quot;] = @ChannelTmp where CURRENT of update_cursor; &#xA;if @Description !=''  set @DescriptionTmp = @Description;&#xA;update [HD].[dbo].[dane] set [&quot;Description&quot;] = @DescriptionTmp where CURRENT of update_cursor; &#xA;if @2ndDescription !=''  set @2ndDescriptionTmp = @2ndDescription;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = @2ndDescriptionTmp where CURRENT of update_cursor; &#xA;if @Starttime !=''  set @StarttimeTmp = @Starttime;&#xA;update [HD].[dbo].[dane] set [&quot;Start time&quot;] = @StarttimeTmp where CURRENT of update_cursor; &#xA;if @Duration !=''  set @DurationTmp = @Duration;&#xA;update [HD].[dbo].[dane] set [&quot;Duration&quot;] = @DurationTmp where CURRENT of update_cursor; &#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;END&#xA;close update_cursor&#xA;Deallocate update_cursor&#xA;GO&#xA;&#xA;&#xA;Drop table if exists [HD].[dbo].[grupy]&#xA;&#xA;CREATE TABLE [HD].[dbo].[grupy] (&#xA;    [Number] numeric(30) ,&#xA;    [Channel] varchar(30),&#xA;    [Group] varchar(30)&#xA;)&#xA;&#xA;Declare @Number numeric(10), @Channel varchar(30), @Group varchar(30);&#xA;DECLARE insert_cursor CURSOR FOR &#xA;SELECT [F1],[F2] from [HD].[dbo].[STAGE_grupy_mediowe];&#xA;&#xA;OPEN insert_cursor&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NULL set @Group = @Channel;&#xA;&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;&#xA;Insert into [HD].[dbo].[grupy]&#xA;SELECT @Number,@Channel,@Group&#xA;&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NuLL set @Group = @Channel;&#xA;END&#xA;delete from [HD].[dbo].[grupy] where Number is NULL;&#xA;close insert_cursor&#xA;Deallocate insert_cursor&#xA;GO&#xA;&#xA;"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -1773,33 +1773,33 @@
         <NodeLayout
           Size="224.8,41.6"
           Id="Package\Execute T-SQL Statement Task"
-          TopLeft="357.714291806124,143.764707898599" />
+          TopLeft="358.285720387284,144.988237327523" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="278.9857176625,94.2058830135829">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="191.128574143624,49.5588248850159"
+              EndConnector="191.700002724784,50.7823543139403"
               Start="0,0"
-              End="191.128574143624,42.0588248850159">
+              End="191.700002724784,43.2823543139403">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.779412442508" />
+                    End="0,21.3911771569701" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.779412442508"
-                    Point2="0,24.779412442508"
-                    Point3="4,24.779412442508" />
+                    Point1="0,21.3911771569701"
+                    Point2="0,25.3911771569701"
+                    Point3="4,25.3911771569701" />
                   <mssgle:LineSegment
-                    End="187.128574143624,24.779412442508" />
+                    End="187.700002724784,25.3911771569701" />
                   <mssgle:CubicBezierSegment
-                    Point1="187.128574143624,24.779412442508"
-                    Point2="191.128574143624,24.779412442508"
-                    Point3="191.128574143624,28.779412442508" />
+                    Point1="187.700002724784,25.3911771569701"
+                    Point2="191.700002724784,25.3911771569701"
+                    Point3="191.700002724784,29.3911771569701" />
                   <mssgle:LineSegment
-                    End="191.128574143624,42.0588248850159" />
+                    End="191.700002724784,43.2823543139403" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1823,11 +1823,11 @@
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination 3"
-          TopLeft="777.142870377521,152.941178615531" />
+          TopLeft="777.142870377521,153.552943329993" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Data Flow Task\OLE DB Destination 2"
-          TopLeft="486.857147674172,131.529413609356" />
+          TopLeft="486.857147674172,132.141178323818" />
         <NodeLayout
           Size="144.8,41.6"
           Id="Package\Data Flow Task\target_groups"
@@ -1839,7 +1839,7 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="50.2857151420749,143.764707898599" />
+          TopLeft="50.2857151420749,144.376472613061" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task\Flat File Source"
@@ -1854,26 +1854,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.4000000681198,53.835295456091"
+              EndConnector="32.40000006812,54.4470601705529"
               Start="0,0"
-              End="32.4000000681198,46.335295456091">
+              End="32.40000006812,46.9470601705529">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9176477280455" />
+                    End="0,23.2235300852765" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9176477280455"
-                    Point2="0,26.9176477280455"
-                    Point3="4,26.9176477280455" />
+                    Point1="0,23.2235300852765"
+                    Point2="0,27.2235300852765"
+                    Point3="4,27.2235300852765" />
                   <mssgle:LineSegment
-                    End="28.4000000681198,26.9176477280455" />
+                    End="28.40000006812,27.2235300852765" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.4000000681198,26.9176477280455"
-                    Point2="32.4000000681198,26.9176477280455"
-                    Point3="32.4000000681198,30.9176477280455" />
+                    Point1="28.40000006812,27.2235300852765"
+                    Point2="32.40000006812,27.2235300852765"
+                    Point3="32.40000006812,31.2235300852765" />
                   <mssgle:LineSegment
-                    End="32.4000000681198,46.335295456091" />
+                    End="32.40000006812,46.9470601705529" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1888,26 +1888,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.3142860159582,64.8470603164092"
+              EndConnector="-9.3142860159582,65.4588250308716"
               Start="0,0"
-              End="-9.3142860159582,57.3470603164092">
+              End="-9.3142860159582,57.9588250308716">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.4235301582046" />
+                    End="0,28.7294125154358" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.4235301582046"
-                    Point2="0,32.4235301582046"
-                    Point3="-4,32.4235301582046" />
+                    Point1="0,28.7294125154358"
+                    Point2="0,32.7294125154358"
+                    Point3="-4,32.7294125154358" />
                   <mssgle:LineSegment
-                    End="-5.3142860159582,32.4235301582046" />
+                    End="-5.3142860159582,32.7294125154358" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.3142860159582,32.4235301582046"
-                    Point2="-9.3142860159582,32.4235301582046"
-                    Point3="-9.3142860159582,36.4235301582046" />
+                    Point1="-5.3142860159582,32.7294125154358"
+                    Point2="-9.3142860159582,32.7294125154358"
+                    Point3="-9.3142860159582,36.7294125154358" />
                   <mssgle:LineSegment
-                    End="-9.3142860159582,57.3470603164092" />
+                    End="-9.3142860159582,57.9588250308716" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1918,30 +1918,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
-          TopLeft="796.342869423847,81.9764711545">
+          TopLeft="796.342869423847,81.9764711545001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="70.4000009536743,70.9647074610305"
+              EndConnector="70.4000009536741,71.576472175493"
               Start="0,0"
-              End="70.4000009536743,63.4647074610305">
+              End="70.4000009536741,64.076472175493">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4823537305152" />
+                    End="0,31.7882360877465" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.4823537305152"
-                    Point2="0,35.4823537305152"
-                    Point3="4,35.4823537305152" />
+                    Point1="0,31.7882360877465"
+                    Point2="0,35.7882360877465"
+                    Point3="4,35.7882360877465" />
                   <mssgle:LineSegment
-                    End="66.4000009536743,35.4823537305152" />
+                    End="66.4000009536741,35.7882360877465" />
                   <mssgle:CubicBezierSegment
-                    Point1="66.4000009536743,35.4823537305152"
-                    Point2="70.4000009536743,35.4823537305152"
-                    Point3="70.4000009536743,39.4823537305152" />
+                    Point1="66.4000009536741,35.7882360877465"
+                    Point2="70.4000009536741,35.7882360877465"
+                    Point3="70.4000009536741,39.7882360877465" />
                   <mssgle:LineSegment
-                    End="70.4000009536743,63.4647074610305" />
+                    End="70.4000009536741,64.076472175493" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1956,14 +1956,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.631934150775"
+              EndConnector="0,56.6319341507753"
               Start="0,0"
-              End="0,49.131934150775">
+              End="0,49.1319341507753">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.131934150775" />
+                    End="0,49.1319341507753" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
