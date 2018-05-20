@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{43A85B3D-3C35-45A2-A15F-ED86FB957359}">
+  DTS:VersionBuild="177"
+  DTS:VersionGUID="{85134E1D-45B2-439D-B111-EA6843A7F562}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -237,17 +237,115 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tworzenie_repozytorium]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{95189044-2AAE-4263-8A19-76886452D891}"
+      DTS:ObjectName="tworzenie_repozytorium">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Integrated Security=SSPI;Connect Timeout=30;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Execute T-SQL Statement Task"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{5CE3AF14-4A4E-429E-B77F-4A882C458D07}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute T-SQL Statement Task"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
+          SQLTask:SqlStatementSource="truncate table [HD].[dbo].[STAGE_dane]&#xA;truncate table [HD].[dbo].[STAGE_kategorie]&#xA;truncate table [HD].[dbo].[STAGE_grupy_mediowe]&#xA;truncate table [HD].[dbo].[STAGE_target_groups]"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute T-SQL Statement Task 1"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{BC9A69C8-3A85-4390-BF17-1C426CB8DFED}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute T-SQL Statement Task 1"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
+          SQLTask:SqlStatementSource="exec [HD].[dbo].[drop_table];&#xA;"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Modyfikacja tabel"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{7F16E13B-5BEC-4968-901B-FD699B1A6D17}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Modyfikacja tabel"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
+          SQLTask:SqlStatementSource="CREATE TABLE [HD].[dbo].[dane] (&#xA;    [&quot;Date&quot;] varchar(max),&#xA;    [&quot;Channel&quot;] varchar(max),&#xA;    [&quot;Description&quot;] varchar(max),&#xA;    [&quot;2nd Description&quot;] varchar(max),&#xA;    [&quot;Start time&quot;] varchar(max),&#xA;    [&quot;Duration&quot;] varchar(max),&#xA;    [&quot;Variable Target&quot;] varchar(max),&#xA;    [&quot;Total Individuals&quot;] varchar(max),&#xA;    [&quot;Podgrupa&quot;] varchar(max),&#xA;    [&quot;A16-49&quot;] varchar(max),&#xA;    [&quot;M16-49&quot;] varchar(max),&#xA;    [&quot;A4-15&quot;] varchar(max),&#xA;    [&quot;A4-9&quot;] varchar(max),&#xA;    [Column 13] varchar(50)&#xA;)&#xA;&#xA;INSERT INTO [HD].[dbo].[dane] SELECT * FROM [HD].[dbo].[STAGE_dane]&#xA;&#xA;Alter table [HD].[dbo].[dane]&#xA;Drop Column [Column 13]&#xA;&#xA;Declare  @Date varchar(100),@Channel varchar(100), @Description varchar(100), @2ndDescription varchar(100),@Starttime varchar(100), @Duration varchar(100),&#xA;&#x9;&#x9; @DateTmp varchar(100),@ChannelTmp varchar(100), @DescriptionTmp varchar(100), @2ndDescriptionTmp varchar(100),@StarttimeTmp varchar(100), @DurationTmp varchar(100);&#xA;&#xA;DECLARE update_cursor CURSOR FOR &#xA;SELECT [&quot;Date&quot;],[&quot;Channel&quot;],[&quot;Description&quot;],[&quot;2nd Description&quot;],[&quot;Start time&quot;],[&quot;Duration&quot;]&#xA;from [HD].[dbo].[dane]&#xA;&#xA;OPEN update_cursor&#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;if @Date !='' set @DateTmp = @Date;&#xA;update [HD].[dbo].[dane] set [&quot;Date&quot;] = @DateTmp where CURRENT of update_cursor; &#xA;if @Channel !=''  set @ChannelTmp = @Channel;&#xA;update [HD].[dbo].[dane] set [&quot;Channel&quot;] = @ChannelTmp where CURRENT of update_cursor; &#xA;if @Description !=''  set @DescriptionTmp = @Description;&#xA;update [HD].[dbo].[dane] set [&quot;Description&quot;] = @DescriptionTmp where CURRENT of update_cursor; &#xA;if @2ndDescription !=''  set @2ndDescriptionTmp = @2ndDescription;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = @2ndDescriptionTmp where CURRENT of update_cursor; &#xA;if @Starttime !=''  set @StarttimeTmp = @Starttime;&#xA;update [HD].[dbo].[dane] set [&quot;Start time&quot;] = @StarttimeTmp where CURRENT of update_cursor; &#xA;if @Duration !=''  set @DurationTmp = @Duration;&#xA;update [HD].[dbo].[dane] set [&quot;Duration&quot;] = @DurationTmp where CURRENT of update_cursor; &#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;END&#xA;close update_cursor&#xA;Deallocate update_cursor&#xA;GO&#xA;&#xA;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = '' where [&quot;Description&quot;] = 'PROMO';&#xA;&#xA;&#xA;&#x9;CREATE TABLE [HD].[dbo].[przejsciowa] (&#xA;    [&quot;Date&quot;] Date,&#xA;    [&quot;Channel&quot;] varchar(max),&#xA;    [&quot;Description&quot;] varchar(max),&#xA;    [&quot;2nd Description&quot;] varchar(max),&#xA;    [&quot;Start time&quot;] time(0),&#xA;    [&quot;Duration&quot;] time(0),&#xA;    [&quot;Variable Target&quot;] varchar(max),&#xA;    [&quot;Total Individuals&quot;] float,&#xA;    [&quot;Podgrupa&quot;] float,&#xA;    [&quot;A16-49&quot;] float,&#xA;    [&quot;M16-49&quot;] float,&#xA;    [&quot;A4-15&quot;] float,&#xA;    [&quot;A4-9&quot;] float&#xA;)&#xA;exec [HD].[dbo].[replace_dane];&#xA;exec [HD].[dbo].[cast_data_in_dane];&#xA;exec [HD].[dbo].[mod_channel_in_dane];&#xA;&#xA;Drop table if exists [HD].[dbo].[grupy]&#xA;&#xA;CREATE TABLE [HD].[dbo].[grupy] (&#xA;    [Number] numeric(30) ,&#xA;    [Channel] varchar(30),&#xA;    [Group] varchar(30)&#xA;)&#xA;&#xA;Declare @Number numeric(10), @Channel varchar(30), @Group varchar(30);&#xA;DECLARE insert_cursor CURSOR FOR &#xA;SELECT [F1],[F2] from [HD].[dbo].[STAGE_grupy_mediowe];&#xA;&#xA;OPEN insert_cursor&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NULL set @Group = @Channel;&#xA;&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;&#xA;Insert into [HD].[dbo].[grupy]&#xA;SELECT @Number,@Channel,@Group&#xA;&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NuLL set @Group = @Channel;&#xA;END&#xA;delete from [HD].[dbo].[grupy] where Number is NULL;&#xA;close insert_cursor&#xA;Deallocate insert_cursor&#xA;GO&#xA;&#xA;"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tworzenie tabel do repozytorium"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{E77F08EB-85EB-409B-891C-E66AE29CD007}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tworzenie tabel do repozytorium"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95189044-2AAE-4263-8A19-76886452D891}"
+          SQLTask:SqlStatementSource="CREATE TABLE  [HD].[dbo].[REP_TargetGroup] (&#xA;    [TargetGroupID]  int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [TargetGroupCode] varchar(max),&#xA;    [TargetGroupName] varchar(max)&#xA;)&#xA;CREATE TABLE  [HD].[dbo].[REP_MediaGroup] (&#xA;    [MediaGroupID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Category] (&#xA;    [CategoryID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [CategoryName] varchar(max)&#xA;)&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Calendar] (&#xA;    [CalendarID] int PRIMARY KEY IDENTITY(1,1),&#xA;    [Date] date, &#xA;    [DayOfWeek] varchar(max),&#xA;    [CalendarMonth] varchar(max),&#xA;    [HolydayIndicator] bit,&#xA;    [WeekdayIndicator] bit&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Channel] (&#xA;    [ChannelID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupID] int,&#xA;    Constraint [MediaGroupID] FOREIGN KEY ([MediaGroupID]) REFERENCES [HD].[dbo].[REP_MediaGroup]([MediaGroupID]),&#xA;    [CategoryID] int,&#xA;    Constraint [CategoryID] FOREIGN KEY ([CategoryID]) REFERENCES [HD].[dbo].[REP_Category]([CategoryID]),&#xA;    [ChannelName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Description] (&#xA;    [DescriptionID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [Description] varchar(max),&#xA;    [2nd Description] varchar(max)&#xA;)&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_FactTable] (&#xA;    [FactTableID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [CalendarID] int,&#xA;    Constraint [CalendarID] FOREIGN KEY ([CalendarID]) REFERENCES [HD].[dbo].[REP_Calendar]([CalendarID]),&#xA;&#xA;    [TargetGroupID] int,&#xA;    Constraint [TargetGroupID] FOREIGN KEY ([TargetGroupID]) REFERENCES [HD].[dbo].[REP_TargetGroup]([TargetGroupID]),&#xA;&#xA;    [ChannelID] int,&#xA;    Constraint [ChannelID] FOREIGN KEY ([ChannelID]) REFERENCES [HD].[dbo].[REP_Channel]([ChannelID]),&#xA;    &#xA;    [DescriptionID] int,&#xA;    Constraint [DescriptionID] FOREIGN KEY ([DescriptionID] ) REFERENCES [HD].[dbo].[REP_Description] ([DescriptionID] ),&#xA;&#xA;    [Starttime] time(0),&#xA;    [Duration] time(0),&#xA;    [AMR %] float,&#xA;    [SHR %] float,&#xA;    [RCH %] float,&#xA;    [RCH] float,&#xA;    [AMR] float&#xA;)"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Załadowanie danych do STAGE"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{1FBC074A-E5A3-41E4-B377-2440EC8ADD95}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Załadowanie danych do STAGE"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -255,7 +353,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Flat File Source"
+              refId="Package\Załadowanie danych do STAGE\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -275,24 +373,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  refId="Package\Załadowanie danych do STAGE\Flat File Source.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Date&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Date&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]"
                       name="&quot;Date&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -307,13 +405,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Channel&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Channel&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]"
                       name="&quot;Channel&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -328,13 +426,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Description&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Description&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]"
                       name="&quot;Description&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -349,13 +447,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;2nd Description&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;2nd Description&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]"
                       name="&quot;2nd Description&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -370,13 +468,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Start time&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Start time&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]"
                       name="&quot;Start time&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -391,13 +489,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Duration&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Duration&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]"
                       name="&quot;Duration&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -412,13 +510,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Variable Target&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Variable Target&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]"
                       name="&quot;Variable Target&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -433,13 +531,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Total Individuals&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Total Individuals&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]"
                       name="&quot;Total Individuals&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -454,13 +552,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Podgrupa&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Podgrupa&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]"
                       name="&quot;Podgrupa&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -475,13 +573,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A16-49&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A16-49&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]"
                       name="&quot;A16-49&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -496,13 +594,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;M16-49&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;M16-49&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]"
                       name="&quot;M16-49&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -517,13 +615,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-15&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-15&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]"
                       name="&quot;A4-15&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -538,13 +636,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]"
                       codePage="1250"
                       dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-9&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-9&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]"
                       name="&quot;A4-9&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -559,14 +657,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 13]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[Column 13]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 13]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[Column 13]"
                       name="Column 13"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -584,72 +682,72 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Date&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Date&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Date&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Channel&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Channel&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Channel&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Description&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;2nd Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;2nd Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;2nd Description&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Start time&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Start time&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Start time&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Duration&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Duration&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Duration&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Variable Target&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Variable Target&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Variable Target&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Total Individuals&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Total Individuals&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Total Individuals&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Podgrupa&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Podgrupa&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Podgrupa&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A16-49&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;M16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;M16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;M16-49&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-15&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-15&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A4-15&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-9&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;A4-9&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A4-9&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
                       codePage="1250"
                       dataType="str"
                       length="50"
@@ -657,27 +755,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -686,7 +784,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\grupy_mediowe"
+              refId="Package\Załadowanie danych do STAGE\grupy_mediowe"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -727,7 +825,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\grupy_mediowe.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -735,68 +833,68 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output]"
+                  refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F1]"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]"
                       name="F1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F2]"
                       length="255"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]"
                       name="F2"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F1]"
                       dataType="r8"
                       name="F1" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].ExternalColumns[F2]"
                       dataType="wstr"
                       length="255"
                       name="F2" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F1]"
                       dataType="r8"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F1]"
                       name="F1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F2]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[F2]"
                       name="F2" />
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -805,7 +903,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\kategorie"
+              refId="Package\Załadowanie danych do STAGE\kategorie"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -846,7 +944,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\kategorie.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\kategorie.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
                   description="The OLE DB runtime connection used to access the database."
@@ -854,71 +952,71 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output]"
+                  refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F1]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].ExternalColumns[F1]"
                       length="255"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F1]"
                       name="F1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F2]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].ExternalColumns[F2]"
                       length="255"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F2]"
                       name="F2"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].ExternalColumns[F1]"
                       dataType="wstr"
                       length="255"
                       name="F1" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].ExternalColumns[F2]"
                       dataType="wstr"
                       length="255"
                       name="F2" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[F1]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[F1]"
                       name="F1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[F2]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[F2]"
                       name="F2" />
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -927,7 +1025,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Załadowanie danych do STAGE\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -942,7 +1040,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STAGE_grupy_mediowe]</property>
+                  name="OpenRowset">[STAGE_grupy_mediowe]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -984,7 +1082,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   description="The OLE DB runtime connection used to access the database."
@@ -992,34 +1090,34 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F1]"
                       cachedDataType="r8"
                       cachedName="F1"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F1]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F2]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="F2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
-                      lineageId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output].Columns[F2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
                       dataType="r8"
                       name="F1" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
                       dataType="wstr"
                       length="255"
                       name="F2" />
@@ -1028,22 +1126,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1052,7 +1150,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 1"
+              refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -1067,7 +1165,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STAGE_target_groups]</property>
+                  name="OpenRowset">[STAGE_target_groups]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1109,7 +1207,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1117,39 +1215,39 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Nazwa]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Nazwa]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Nazwa"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nazwa]"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nazwa]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Kod]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Kod]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Kod"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Kod]"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Kod]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Kod]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Kod]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nazwa]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Nazwa]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Nazwa" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Kod]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Kod]"
                       codePage="1250"
                       dataType="str"
                       length="50"
@@ -1159,22 +1257,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1183,7 +1281,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 2"
+              refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -1198,7 +1296,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[STAGE_kategorie]</property>
+                  name="OpenRowset">[STAGE_kategorie]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1240,7 +1338,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1248,36 +1346,36 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[F1]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="F1"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F1]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F1]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[F2]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="F2"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
-                      lineageId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output].Columns[F2]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
+                      lineageId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output].Columns[F2]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
                       dataType="wstr"
                       length="255"
                       name="F1" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[F2]"
                       dataType="wstr"
                       length="255"
                       name="F2" />
@@ -1286,22 +1384,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1310,7 +1408,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 3"
+              refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -1325,7 +1423,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dane]</property>
+                  name="OpenRowset">[STAGE_dane]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1367,7 +1465,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 3.Connections[OleDbConnection]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4V0OFPL.HD]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1375,173 +1473,173 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Date&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Date&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Date&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Date&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Date&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Date&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Channel&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Channel&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Channel&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Channel&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Channel&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Channel&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Description&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Description&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Description&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Description&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Description&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;2nd Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;2nd Description&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;2nd Description&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;2nd Description&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;2nd Description&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;2nd Description&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Start time&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Start time&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Start time&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Start time&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Start time&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Start time&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Duration&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Duration&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Duration&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Duration&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Duration&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Duration&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Variable Target&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Variable Target&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Variable Target&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Variable Target&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Variable Target&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Variable Target&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Total Individuals&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Total Individuals&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Total Individuals&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Total Individuals&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Total Individuals&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Total Individuals&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Podgrupa&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;Podgrupa&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;Podgrupa&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Podgrupa&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Podgrupa&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Podgrupa&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A16-49&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;A16-49&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A16-49&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A16-49&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A16-49&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;M16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;M16-49&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;M16-49&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;M16-49&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;M16-49&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;M16-49&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A4-15&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A4-15&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;A4-15&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-15&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-15&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-15&quot;]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A4-9&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].Columns[&quot;A4-9&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="text"
                       cachedName="&quot;A4-9&quot;"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-9&quot;]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]" />
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-9&quot;]"
+                      lineageId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;A4-9&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Date&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Date&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Date&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Channel&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Channel&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Channel&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Description&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;2nd Description&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;2nd Description&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;2nd Description&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Start time&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Start time&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Start time&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Duration&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Duration&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Duration&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Variable Target&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Variable Target&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Variable Target&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Total Individuals&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Total Individuals&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Total Individuals&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Podgrupa&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;Podgrupa&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;Podgrupa&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A16-49&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;M16-49&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;M16-49&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;M16-49&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-15&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-15&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A4-15&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-9&quot;]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[&quot;A4-9&quot;]"
                       codePage="1250"
                       dataType="text"
                       name="&quot;A4-9&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[Column 13]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input].ExternalColumns[Column 13]"
                       codePage="1250"
                       dataType="str"
                       length="50"
@@ -1551,22 +1649,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1575,7 +1673,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\target_groups"
+              refId="Package\Załadowanie danych do STAGE\target_groups"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -1595,25 +1693,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\target_groups.Connections[FlatFileConnection]"
+                  refId="Package\Załadowanie danych do STAGE\target_groups.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output]"
+                  refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].ExternalColumns[Nazwa]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].ExternalColumns[Nazwa]"
                       length="50"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Nazwa]"
                       name="Nazwa"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1628,14 +1726,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Kod]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Kod]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].ExternalColumns[Kod]"
+                      externalMetadataColumnId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].ExternalColumns[Kod]"
                       length="50"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].Columns[Kod]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].Columns[Kod]"
                       name="Kod"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1653,13 +1751,13 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].ExternalColumns[Nazwa]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].ExternalColumns[Nazwa]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Nazwa" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output].ExternalColumns[Kod]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output].ExternalColumns[Kod]"
                       codePage="1250"
                       dataType="str"
                       length="50"
@@ -1667,27 +1765,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output]"
+                  refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1698,49 +1796,27 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Excel Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Załadowanie danych do STAGE.Paths[Excel Source Output]"
+              endId="Package\Załadowanie danych do STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
-              startId="Package\Data Flow Task\grupy_mediowe.Outputs[Excel Source Output]" />
+              startId="Package\Załadowanie danych do STAGE\grupy_mediowe.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Excel Source Output1]"
-              endId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+              refId="Package\Załadowanie danych do STAGE.Paths[Excel Source Output1]"
+              endId="Package\Załadowanie danych do STAGE\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
-              startId="Package\Data Flow Task\kategorie.Outputs[Excel Source Output]" />
+              startId="Package\Załadowanie danych do STAGE\kategorie.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              refId="Package\Załadowanie danych do STAGE.Paths[Flat File Source Output]"
+              endId="Package\Załadowanie danych do STAGE\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\target_groups.Outputs[Flat File Source Output]" />
+              startId="Package\Załadowanie danych do STAGE\target_groups.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output1]"
-              endId="Package\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input]"
+              refId="Package\Załadowanie danych do STAGE.Paths[Flat File Source Output1]"
+              endId="Package\Załadowanie danych do STAGE\OLE DB Destination 3.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Załadowanie danych do STAGE\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute T-SQL Statement Task"
-      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:Description="Execute T-SQL Statement Task"
-      DTS:DTSID="{7F16E13B-5BEC-4968-901B-FD699B1A6D17}"
-      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute T-SQL Statement Task"
-      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="Select all INTO [HD].[dbo].[STAGE_dane] FROM [HD].[dbo].[dane]&#xA;Alter table [HD].[dbo].[dane]&#xA;Drop Column [Column 13]&#xA;&#xA;&#xA;&#xA;Declare  @Date varchar(100),@Channel varchar(100), @Description varchar(100), @2ndDescription varchar(100),@Starttime varchar(100), @Duration varchar(100),&#xA;&#x9;&#x9; @DateTmp varchar(100),@ChannelTmp varchar(100), @DescriptionTmp varchar(100), @2ndDescriptionTmp varchar(100),@StarttimeTmp varchar(100), @DurationTmp varchar(100);&#xA;&#xA;DECLARE update_cursor CURSOR FOR &#xA;SELECT [&quot;Date&quot;],[&quot;Channel&quot;],[&quot;Description&quot;],[&quot;2nd Description&quot;],[&quot;Start time&quot;],[&quot;Duration&quot;]&#xA;from [HD].[dbo].[dane]&#xA;&#xA;OPEN update_cursor&#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;if @Date !='' set @DateTmp = @Date;&#xA;update [HD].[dbo].[dane] set [&quot;Date&quot;] = @DateTmp where CURRENT of update_cursor; &#xA;if @Channel !=''  set @ChannelTmp = @Channel;&#xA;update [HD].[dbo].[dane] set [&quot;Channel&quot;] = @ChannelTmp where CURRENT of update_cursor; &#xA;if @Description !=''  set @DescriptionTmp = @Description;&#xA;update [HD].[dbo].[dane] set [&quot;Description&quot;] = @DescriptionTmp where CURRENT of update_cursor; &#xA;if @2ndDescription !=''  set @2ndDescriptionTmp = @2ndDescription;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = @2ndDescriptionTmp where CURRENT of update_cursor; &#xA;if @Starttime !=''  set @StarttimeTmp = @Starttime;&#xA;update [HD].[dbo].[dane] set [&quot;Start time&quot;] = @StarttimeTmp where CURRENT of update_cursor; &#xA;if @Duration !=''  set @DurationTmp = @Duration;&#xA;update [HD].[dbo].[dane] set [&quot;Duration&quot;] = @DurationTmp where CURRENT of update_cursor; &#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;END&#xA;close update_cursor&#xA;Deallocate update_cursor&#xA;GO&#xA;&#xA;&#xA;Drop table if exists [HD].[dbo].[grupy]&#xA;&#xA;CREATE TABLE [HD].[dbo].[grupy] (&#xA;    [Number] numeric(30) ,&#xA;    [Channel] varchar(30),&#xA;    [Group] varchar(30)&#xA;)&#xA;&#xA;Declare @Number numeric(10), @Channel varchar(30), @Group varchar(30);&#xA;DECLARE insert_cursor CURSOR FOR &#xA;SELECT [F1],[F2] from [HD].[dbo].[STAGE_grupy_mediowe];&#xA;&#xA;OPEN insert_cursor&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NULL set @Group = @Channel;&#xA;&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;&#xA;Insert into [HD].[dbo].[grupy]&#xA;SELECT @Number,@Channel,@Group&#xA;&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NuLL set @Group = @Channel;&#xA;END&#xA;delete from [HD].[dbo].[grupy] where Number is NULL;&#xA;close insert_cursor&#xA;Deallocate insert_cursor&#xA;GO&#xA;&#xA;"
-          SQLTask:ServerVersion="9"
-          SQLTask:ExtendedLogging="True"
-          SQLTask:LocalConnectionForLogging=""
-          SQLTask:TaskName=""
-          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1749,10 +1825,34 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{D43F2B86-9880-4F97-9C5F-61E82ECAD1A8}"
-      DTS:From="Package\Data Flow Task"
+      DTS:From="Package\Załadowanie danych do STAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Execute T-SQL Statement Task" />
+      DTS:To="Package\Modyfikacja tabel" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{928D49F0-47EF-43BD-AAE9-2011B8551459}"
+      DTS:From="Package\Modyfikacja tabel"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute T-SQL Statement Task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9D175D6B-88C0-405A-B1B8-7E8A89867C1F}"
+      DTS:From="Package\Execute T-SQL Statement Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Załadowanie danych do STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{0EDCFDDA-DF15-45FD-9AE9-6028C499575C}"
+      DTS:From="Package\Execute T-SQL Statement Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Tworzenie tabel do repozytorium" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1765,41 +1865,131 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="203.7857176625,52.6058830135829" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="224.8,41.6"
           Id="Package\Execute T-SQL Statement Task"
-          TopLeft="358.285720387284,144.376472613061" />
+          TopLeft="185.714288876981,4.89411771569697" />
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\Execute T-SQL Statement Task 1"
+          TopLeft="277.714290443732,229.9294134635" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Modyfikacja tabel"
+          TopLeft="317.142862543768,157.835296331228" />
+        <NodeLayout
+          Size="232.8,46.4"
+          Id="Package\Tworzenie tabel do repozytorium"
+          TopLeft="279.102045569406,311.213449742803" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Załadowanie danych do STAGE"
+          TopLeft="207.78571773062,77.0764715920678" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="278.9857176625,94.2058830135829">
+          TopLeft="320.18571773062,118.676471592068">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="191.700002724784,50.1705895994782"
+              EndConnector="76.9571448131485,39.1588247391598"
               Start="0,0"
-              End="191.700002724784,42.6705895994782">
+              End="76.9571448131485,31.6588247391598">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.0852947997391" />
+                    End="0,15.5794123695799" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.0852947997391"
-                    Point2="0,25.0852947997391"
-                    Point3="4,25.0852947997391" />
+                    Point1="0,15.5794123695799"
+                    Point2="0,19.5794123695799"
+                    Point3="4,19.5794123695799" />
                   <mssgle:LineSegment
-                    End="187.700002724784,25.0852947997391" />
+                    End="72.9571448131485,19.5794123695799" />
                   <mssgle:CubicBezierSegment
-                    Point1="187.700002724784,25.0852947997391"
-                    Point2="191.700002724784,25.0852947997391"
-                    Point3="191.700002724784,29.0852947997391" />
+                    Point1="72.9571448131485,19.5794123695799"
+                    Point2="76.9571448131485,19.5794123695799"
+                    Point3="76.9571448131485,23.5794123695799" />
                   <mssgle:LineSegment
-                    End="191.700002724784,42.6705895994782" />
+                    End="76.9571448131485,31.6588247391598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="395.82857649375,199.435296331228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4941171322726"
+              Start="0,0"
+              End="0,22.9941171322726">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9941171322726" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="298.114288876981,46.494117715697">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.0714288536385,30.5823538763708"
+              Start="0,0"
+              End="22.0714288536385,23.0823538763708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2911769381854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2911769381854"
+                    Point2="0,15.2911769381854"
+                    Point3="4,15.2911769381854" />
+                  <mssgle:LineSegment
+                    End="18.0714288536385,15.2911769381854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.0714288536385,15.2911769381854"
+                    Point2="22.0714288536385,15.2911769381854"
+                    Point3="22.0714288536385,19.2911769381854" />
+                  <mssgle:LineSegment
+                    End="22.0714288536385,23.0823538763708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="395.008168006569,271.5294134635">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6840362793026"
+              Start="0,0"
+              End="0,32.1840362793026">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1840362793026" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1812,44 +2002,44 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Załadowanie danych do STAGE">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="153.6,41.6"
-          Id="Package\Data Flow Task\grupy_mediowe"
+          Id="Package\Załadowanie danych do STAGE\grupy_mediowe"
           TopLeft="68.0000011580331,37.3176475821895" />
         <NodeLayout
           Size="179.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination 3"
+          Id="Package\Załadowanie danych do STAGE\OLE DB Destination 3"
           TopLeft="777.142870377521,153.552943329993" />
         <NodeLayout
           Size="179.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination 2"
+          Id="Package\Załadowanie danych do STAGE\OLE DB Destination 2"
           TopLeft="486.857147674172,132.141178323818" />
         <NodeLayout
           Size="144.8,41.6"
-          Id="Package\Data Flow Task\target_groups"
+          Id="Package\Załadowanie danych do STAGE\target_groups"
           TopLeft="285.795923234423,35.0453786427587" />
         <NodeLayout
           Size="179.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination 1"
+          Id="Package\Załadowanie danych do STAGE\OLE DB Destination 1"
           TopLeft="271.591841359875,133.277312793534" />
         <NodeLayout
           Size="170.4,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
+          Id="Package\Załadowanie danych do STAGE\OLE DB Destination"
           TopLeft="50.2857151420749,144.376472613061" />
         <NodeLayout
           Size="150.4,41.6"
-          Id="Package\Data Flow Task\Flat File Source"
+          Id="Package\Załadowanie danych do STAGE\Flat File Source"
           TopLeft="721.142869423847,40.3764711545001" />
         <NodeLayout
           Size="122.4,41.6"
-          Id="Package\Data Flow Task\kategorie"
+          Id="Package\Załadowanie danych do STAGE\kategorie"
           TopLeft="482.857147606052,36.0941181532652" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Output1]"
+          Id="Package\Załadowanie danych do STAGE.Paths[Excel Source Output1]"
           TopLeft="544.057147606052,77.6941181532652">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1883,7 +2073,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          Id="Package\Załadowanie danych do STAGE.Paths[Excel Source Output]"
           TopLeft="144.800001158033,78.9176475821895">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1917,7 +2107,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          Id="Package\Załadowanie danych do STAGE.Paths[Flat File Source Output1]"
           TopLeft="796.342869423847,81.9764711545001">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1951,7 +2141,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          Id="Package\Załadowanie danych do STAGE.Paths[Flat File Source Output]"
           TopLeft="359.693882297149,76.6453786427587">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1976,7 +2166,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\grupy_mediowe">
+    design-time-name="Package\Załadowanie danych do STAGE\grupy_mediowe">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1989,7 +2179,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 3">
+    design-time-name="Package\Załadowanie danych do STAGE\OLE DB Destination 3">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2002,7 +2192,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 2">
+    design-time-name="Package\Załadowanie danych do STAGE\OLE DB Destination 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2015,7 +2205,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    design-time-name="Package\Załadowanie danych do STAGE\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2028,7 +2218,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Załadowanie danych do STAGE\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2041,7 +2231,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\kategorie">
+    design-time-name="Package\Załadowanie danych do STAGE\kategorie">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
