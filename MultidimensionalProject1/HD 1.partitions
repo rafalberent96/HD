@@ -1,0 +1,145 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2ad52078-4d5c-49e1-8840-5830c32a98d4" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>HD 1</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>REP Calendar</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b50f6482-498a-4640-bfec-ccd7c670a742">
+          <ID>REP Calendar</ID>
+          <Name>REP Calendar</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e7abec18-19c4-4409-8c60-6e6de2da0c42">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_Calendar</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Category</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2aeeff9f-aa8e-4bfd-83ff-3c4743be1e7c">
+          <ID>REP Category</ID>
+          <Name>REP Category</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="be52755f-6cee-4b3b-bd83-6fc8d68cc7f5">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_Category</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Description</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ca511500-af77-441f-9fac-795486a8a6fc">
+          <ID>REP Description</ID>
+          <Name>REP Description</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1e64718e-e469-466e-877c-f739229e335d">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_Description</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Channel</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="c454112b-cb8a-4519-9d93-34696d7d4398">
+          <ID>REP Channel</ID>
+          <Name>REP Channel</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="65b0145b-0761-4af4-9ae8-a8c9da84ed8a">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_Channel</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Fact Table</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a54ca57a-7389-4c73-86ba-78c791e8f986">
+          <ID>REP Fact Table</ID>
+          <Name>REP Fact Table</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1381a0ba-e67c-4d41-ab65-40e74f7fe354">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_FactTable</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Media Group</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="542653e3-79cb-4ab8-b573-f20e11d77106">
+          <ID>REP Media Group</ID>
+          <Name>REP Media Group</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a7981497-7d9d-43a1-8b2a-c5b39027cec7">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_MediaGroup</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>REP Target Group</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fd3c5c31-4995-460d-8776-336e26d77dcc">
+          <ID>REP Target Group</ID>
+          <Name>REP Target Group</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d48b7c38-1676-4ca4-9c48-d7bd97a7e071">
+            <DataSourceViewID>HD</DataSourceViewID>
+            <TableID>dbo_REP_TargetGroup</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

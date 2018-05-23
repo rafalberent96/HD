@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="195"
-  DTS:VersionGUID="{04D4A17C-BFEE-4709-AAED-53F1D316B239}">
+  DTS:VersionBuild="198"
+  DTS:VersionGUID="{BCA34667-8F1C-4708-A20E-03A5774112A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1823,7 +1823,6 @@
       DTS:refId="Package\Ładowanie danych do repozytorium głównego"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
       DTS:DTSID="{ED826A2F-95D4-45BF-932C-56A65AD66CFA}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -1897,6 +1896,10 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="295.2,41.6"
+          Id="Package\Ładowanie danych do repozytorium głównego"
+          TopLeft="275.428576119092,417.223535263167" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\Modyfikacja tabel"
@@ -2041,10 +2044,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="295.2,41.6"
-          Id="Package\Ładowanie danych do repozytorium głównego"
-          TopLeft="275.428576119092,417.223535263167" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="395.502045569406,363.731096887424">

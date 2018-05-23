@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="194"
-  DTS:VersionGUID="{E0C92633-9FB3-4B1E-9FF1-3134E05CA11C}">
+  DTS:VersionBuild="197"
+  DTS:VersionGUID="{52F0865A-163D-4426-866D-714AC6A9378E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -254,6 +254,7 @@
       DTS:refId="Package\Modyfikacja tabel"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7F16E13B-5BEC-4968-901B-FD699B1A6D17}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -276,6 +277,7 @@
       DTS:refId="Package\Truncate"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
+      DTS:Disabled="True"
       DTS:DTSID="{5CE3AF14-4A4E-429E-B77F-4A882C458D07}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -298,6 +300,7 @@
       DTS:refId="Package\Tworzenie tabel do repozytorium"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
+      DTS:Disabled="True"
       DTS:DTSID="{E77F08EB-85EB-409B-891C-E66AE29CD007}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -320,6 +323,7 @@
       DTS:refId="Package\Usuwanie kluczy"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
+      DTS:Disabled="True"
       DTS:DTSID="{BC9A69C8-3A85-4390-BF17-1C426CB8DFED}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -342,6 +346,7 @@
       DTS:refId="Package\Załadowanie danych do STAGE"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1FBC074A-E5A3-41E4-B377-2440EC8ADD95}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1823,7 +1828,6 @@
       DTS:refId="Package\Ładowanie danych do repozytorium głównego"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
-      DTS:Disabled="True"
       DTS:DTSID="{ED826A2F-95D4-45BF-932C-56A65AD66CFA}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
@@ -1897,6 +1901,10 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="295.2,41.6"
+          Id="Package\Ładowanie danych do repozytorium głównego"
+          TopLeft="275.428576119092,417.223535263167" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\Modyfikacja tabel"
@@ -2041,10 +2049,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="295.2,41.6"
-          Id="Package\Ładowanie danych do repozytorium głównego"
-          TopLeft="275.428576119092,417.223535263167" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="395.502045569406,363.731096887424">
