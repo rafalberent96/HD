@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8ad5e892-8e43-4e0f-bef8-f84b257df700" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="013b92f0-5ca6-4456-95b3-14e0d92a60cf" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>HD</ID>
   <Name>HD</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,6 +6,214 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="14" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4622" scrolltop="-444" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="78" x="19389" y="12023" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee00009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_MediaGroup" left="20" top="10401" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3514" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000ba0d000034060000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_MediaGroup" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_Channel" left="274" top="5694" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3006" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000be0b000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_Channel" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_Calendar" left="5934" top="11747" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3471" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00008f0d0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_Calendar" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_FactTable" left="5934" top="4347" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3090" height="5271" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000120c000097140000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_FactTable" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_Description" left="5934" top="0" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3175" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000670c00009b070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_Description" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_TargetGroup" left="11424" top="5873" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3598" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00000e0e00009b070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_TargetGroup" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="REP_Category" left="243" top="1706" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3069" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000fd0b000034060000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_REP_Category" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1378" top="7701" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[MediaGroupID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="6" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1777" y="10401" />
+              <point x="1777" y="8001" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1378" top="2795" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[CategoryID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="2" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1777" y="3294" />
+              <point x="1777" y="5694" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2980" top="5898" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3254" height="834" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[ChannelID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="11" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3280" y="6297" />
+              <point x="4607" y="6297" />
+              <point x="4607" y="6432" />
+              <point x="5934" y="6432" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7179" top="9318" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="890" height="2929" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[CalendarID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7669" y="11747" />
+              <point x="7669" y="10547" />
+              <point x="7479" y="10547" />
+              <point x="7479" y="9618" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7122" top="1448" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[DescriptionID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7521" y="1947" />
+              <point x="7521" y="3147" />
+              <point x="7479" y="3147" />
+              <point x="7479" y="4347" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8724" top="6447" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="835" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[TargetGroupID]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="16" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="11424" y="6846" />
+              <point x="10224" y="6846" />
+              <point x="10224" y="6982" />
+              <point x="9024" y="6982" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +229,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-4622</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-444</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -37,299 +245,97 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-      <Value>100</Value>
+      <Value>78</Value>
     </Annotation>
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="b8ae2e47-4b90-4826-8f22-f40a25b11390">
+    <Dimension dwd:design-time-name="2a08acce-0ec9-46c6-a5ce-bacdde0a31d6">
       <ID>REP Calendar</ID>
       <Name>REP Calendar</Name>
       <DimensionID>REP Calendar</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="88c9fa69-2e18-4cb8-8d77-746accc226fe">
+        <Attribute dwd:design-time-name="b46ff4e6-c0bc-4e65-8011-de6598c55aee">
           <AttributeID>Calendar ID</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="6149a4b0-0e42-4b29-8fd7-fbdff42a8393">
-      <ID>REP Category</ID>
-      <Name>REP Category</Name>
-      <DimensionID>REP Category</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="dccc5172-486f-49f5-875c-39fb2584d086">
-          <AttributeID>Category ID</AttributeID>
+        <Attribute dwd:design-time-name="f270ccb1-5ba7-4858-9a38-df4e4daf6278">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dc7dceda-a048-40e3-9c50-32123583e10d">
+          <AttributeID>Day Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fd10f3b3-608c-4e33-8c5a-c0fa7ac86b28">
+          <AttributeID>Calendar Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ede00f79-97aa-49e2-8849-a5f034f2196f">
+          <AttributeID>Holyday Indicator</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8ba10658-3ce5-41f5-9b30-8c017c7a3a21">
+          <AttributeID>Weekday Indicator</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="feb3a9fc-d037-44a1-a2cd-018ad77bbb4c">
+    <Dimension dwd:design-time-name="4132c2e4-511f-42e0-956e-906fca556053">
       <ID>REP Description</ID>
       <Name>REP Description</Name>
       <DimensionID>REP Description</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="fa8d6807-8d95-46da-bc79-289716b1b0ff">
+        <Attribute dwd:design-time-name="79cf5537-a351-4041-bdd8-a02762fdadfe">
           <AttributeID>Description ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6fbeab66-7b92-4a36-b9e2-2564f2271be1">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1a6b4693-273b-4001-b27a-77e8b45d4feb">
+          <AttributeID>2nd Description</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="8c7bd931-61c8-48e2-87d5-1b7aea42fbd9">
+    <Dimension dwd:design-time-name="7c828e2f-e321-4ab1-8bfa-db95b9fdd549">
       <ID>REP Channel</ID>
       <Name>REP Channel</Name>
       <DimensionID>REP Channel</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="533881f6-3b8a-41e8-9e36-af131efa10aa">
+        <Attribute dwd:design-time-name="c28d9530-d96b-4b62-9b09-4b456f77fddc">
           <AttributeID>Channel ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="0f379ae8-17b0-4700-8909-4eaf9b97e356">
+        <Attribute dwd:design-time-name="4946544b-edcc-4bff-911c-2dcbd93c567a">
+          <AttributeID>Channel Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="39ad0315-49a2-43d4-9fd0-92ac0ff232fc">
           <AttributeID>Media Group ID</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="97595a76-c482-4a8b-89f9-5c8b386a5edd">
+        <Attribute dwd:design-time-name="fef2f8fc-57b2-4170-bc6b-0e0ecad0a71e">
+          <AttributeID>Media Group Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="945d1ab1-d053-438e-b289-8bdbfeb3e82c">
           <AttributeID>Category ID</AttributeID>
         </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="7fdff291-1269-4b84-a48f-ef42e2ebd900">
-      <ID>REP Media Group</ID>
-      <Name>REP Media Group</Name>
-      <DimensionID>REP Media Group</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="f4d5345a-ae70-420d-bfdb-3b68475d1c88">
-          <AttributeID>Media Group ID</AttributeID>
+        <Attribute dwd:design-time-name="a08c455b-0f6c-4a7e-8288-6169b00cdae0">
+          <AttributeID>Category Name</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="f5a31478-9a41-4e88-84b1-b75ca13d5e71">
+    <Dimension dwd:design-time-name="50d15c30-60f1-4a58-bdb6-ef1851e2ee5b">
       <ID>REP Target Group</ID>
       <Name>REP Target Group</Name>
       <DimensionID>REP Target Group</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="12e3dd3f-5b35-468d-b480-00b43999206f">
+        <Attribute dwd:design-time-name="812d5ad5-d3a8-4aaf-a377-264aa7ddef2b">
           <AttributeID>Target Group ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="29693194-3421-4a8d-b812-be2da26562b9">
+          <AttributeID>Target Group Code</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7e9f046d-9846-4ad1-b29b-e8d95be4d71f">
+          <AttributeID>Target Group Name</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="ff72526e-ea13-49a4-b4b7-d1970e1e5d57">
-      <ID>REP Calendar</ID>
-      <Name>REP Calendar</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="7feb0140-5b79-48b1-bc0e-0d2ad8c46774">
-          <ID>REP Calendar Count</ID>
-          <Name>REP Calendar Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="49b7b131-f681-408e-8db9-b2744acf634f">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="47b15f3d-5b3f-42b5-8b6f-c8906dbf60f1">
-              <TableID>dbo_REP_Calendar</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="4e30413c-544e-4f12-8f86-18403ceb6133">
-          <CubeDimensionID>REP Calendar</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="d5f0af8c-5606-49f5-8506-d4bf305907f9">
-              <AttributeID>Calendar ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="b125971f-4c13-4ad1-90d2-77f59dbf9b37">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="875ed9ea-2667-4948-af0a-95823230fa4f">
-                    <TableID>dbo_REP_Calendar</TableID>
-                    <ColumnID>CalendarID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="b31d922a-fa91-4ef8-8614-717df2028573">
-      <ID>REP Category</ID>
-      <Name>REP Category</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="2be23bad-8c2b-4947-8acb-5c362d98173f">
-          <ID>REP Category Count</ID>
-          <Name>REP Category Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="243635ec-9885-42bd-a9a4-a3a7f2c51eb9">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="218d1043-cff1-4251-a55d-913f6a9102a8">
-              <TableID>dbo_REP_Category</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="bd99e41a-e3ea-4bee-bc42-be1eaa1e1c2b">
-          <CubeDimensionID>REP Category</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="c12771bb-11b2-40e0-845f-8971120e6b77">
-              <AttributeID>Category ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="377a0490-cd22-48f7-b8e3-b6e7e97adb9f">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="06290fc1-92a8-4395-9b95-dba2a41ab71f">
-                    <TableID>dbo_REP_Category</TableID>
-                    <ColumnID>CategoryID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="2b2c324f-1622-4111-8406-56ddc0a6e71a">
-      <ID>REP Description</ID>
-      <Name>REP Description</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="148943ff-4617-40ac-afd7-8bd5ba358180">
-          <ID>REP Description Count</ID>
-          <Name>REP Description Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="d8efad39-d694-40ce-95ad-212fa8989cda">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="18c1242a-b00b-48a7-a2cd-25956cfb5f41">
-              <TableID>dbo_REP_Description</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="cef84ee4-5197-496b-94da-9b9af62871f9">
-          <CubeDimensionID>REP Description</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="e2b40468-8460-4416-adb7-d47f4273bf5b">
-              <AttributeID>Description ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="7cdd38d1-4ff5-4046-80dd-803190c9cc8d">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="70fa0844-d22e-424c-a8c7-20e35951e0c3">
-                    <TableID>dbo_REP_Description</TableID>
-                    <ColumnID>DescriptionID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="3e3a8309-dcee-43b2-8de3-604a0c14445e">
-      <ID>REP Channel</ID>
-      <Name>REP Channel</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="87e0e20a-03a2-4caf-96b8-7c223468e3b5">
-          <ID>REP Channel Count</ID>
-          <Name>REP Channel Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="c9b2d03d-602b-4348-816a-35b41154112c">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="5256b46b-08c9-4c93-bf18-6080530cd85b">
-              <TableID>dbo_REP_Channel</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="9b3193b5-62e3-456d-b094-00e8a7b2e149">
-          <CubeDimensionID>REP Channel</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="77cb2fd9-a733-441e-85dd-c04af97d8706">
-              <AttributeID>Channel ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="49e5dd87-fadc-40ff-81b8-3d10263640bf">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3d383cdb-a996-4067-8a1b-b2369147faa9">
-                    <TableID>dbo_REP_Channel</TableID>
-                    <ColumnID>ChannelID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0d23cd8b-ea37-43bc-977f-2c32dc47f741">
-          <CubeDimensionID>REP Media Group</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="5def52cc-7251-4760-a9a2-2dc12afbe5ed">
-              <AttributeID>Media Group ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="d9d47793-b928-4172-8556-d1bc58b195b8">
-                  <DataType>Integer</DataType>
-                  <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="eb4d11db-7e8d-4c87-84c2-5fbf8130e586">
-                    <TableID>dbo_REP_Channel</TableID>
-                    <ColumnID>MediaGroupID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2ce50175-9783-4b85-a638-f8ef6dcb87de">
-          <CubeDimensionID>REP Category</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="27f31316-24b9-469b-92f8-0ec7a99c1724">
-              <AttributeID>Category ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="34a42565-75de-4e14-bd04-aa7a3f84df6c">
-                  <DataType>Integer</DataType>
-                  <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b40d0d0b-e5e0-42f7-a32a-ff8417bc9b16">
-                    <TableID>dbo_REP_Channel</TableID>
-                    <ColumnID>CategoryID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="0f192f88-9b86-41f1-9cfb-715628507cee">
+    <MeasureGroup dwd:design-time-name="f885ce78-6c5b-4fa3-b7f4-59c9f49f64cc">
       <ID>REP Fact Table</ID>
       <Name>REP Fact Table</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -337,70 +343,58 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="7363c26a-befd-444d-9b39-47cef85af478">
+        <Measure dwd:design-time-name="11ec88cb-aaef-4e10-b851-f5f3ca12e240">
           <ID>AMR</ID>
           <Name>AMR</Name>
-          <Source dwd:design-time-name="041fdffa-ac21-493e-978c-1065e4073128">
+          <Source dwd:design-time-name="9ab133f9-9bdc-44bb-a26c-bb0a71745bd6">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="508d57a9-7a2d-44b8-bdc3-e93380ead020">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="91049d49-c0f3-4d1e-ac64-05487b8b7b16">
               <TableID>dbo_REP_FactTable</TableID>
               <ColumnID>AMR_x0020__x0025_</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="25425e0a-d21d-4535-9c75-a81d0cc99f25">
+        <Measure dwd:design-time-name="9bd9602f-8392-41b7-ba28-7eda9fdb26c8">
           <ID>SHR</ID>
           <Name>SHR</Name>
-          <Source dwd:design-time-name="2e15906e-9731-499f-ab8f-c88967918b2c">
+          <Source dwd:design-time-name="65583a22-5b19-4c13-8eed-b8508e0e14cc">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="2b197986-76c0-45a2-a09b-b884fb48e7d0">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4486621f-24f4-430b-9651-b59f057429dd">
               <TableID>dbo_REP_FactTable</TableID>
               <ColumnID>SHR_x0020__x0025_</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="7625e06f-75c5-4477-b04a-2aaa031a8720">
+        <Measure dwd:design-time-name="4024f072-39c7-496e-90d0-70958ed5c8dc">
           <ID>RCH</ID>
           <Name>RCH</Name>
-          <Source dwd:design-time-name="5efd276b-f94b-4394-9a2a-4af9f94e5ea4">
+          <Source dwd:design-time-name="c8385fbf-c3b3-40e6-bc30-2aa25de34bf6">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="2bf6ce4b-2bc1-420b-9fa6-27465d0c4313">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7747f8b9-5f7f-4bea-a1f1-61c5dace1452">
               <TableID>dbo_REP_FactTable</TableID>
               <ColumnID>RCH_x0020__x0025_</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="a4f3428e-f7d3-47a5-a0ce-b8aead62bef1">
+        <Measure dwd:design-time-name="7d9c6c1b-4ece-48f4-86ef-add18fb8f6a3">
           <ID>RCH - REP Fact Table</ID>
           <Name>RCH - REP Fact Table</Name>
-          <Source dwd:design-time-name="97679c7c-aeb5-4e61-80ca-489aa3f38270">
+          <Source dwd:design-time-name="8ec32a90-53d5-4b52-a022-b03865da4533">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="832a33fe-b190-4385-a1c6-49b4cfbb87c5">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ac9399b3-c8bd-4544-b2bc-1c52389977e3">
               <TableID>dbo_REP_FactTable</TableID>
               <ColumnID>RCH</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="dcb4fb92-b252-42bc-8b8f-ea488529b5fe">
+        <Measure dwd:design-time-name="06b8d965-cbc3-47b8-962b-ca7876690a1e">
           <ID>AMR - REP Fact Table</ID>
           <Name>AMR - REP Fact Table</Name>
-          <Source dwd:design-time-name="036ba53b-f9d1-4318-a365-ca6bcf2e4c06">
+          <Source dwd:design-time-name="e755afe7-61a4-422d-9313-2473fb0ba36b">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="79708fba-c115-47de-8b47-766a7d023606">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="44714165-6f7f-45fc-b231-f78a311006f3">
               <TableID>dbo_REP_FactTable</TableID>
               <ColumnID>AMR</ColumnID>
-            </Source>
-          </Source>
-        </Measure>
-        <Measure dwd:design-time-name="f9740e21-da1c-4a2f-a217-bcd14f1a32b8">
-          <ID>REP Fact Table Count</ID>
-          <Name>REP Fact Table Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="c5bb97ae-c9dd-45ce-aa8a-050d33fdb955">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="6df24361-0902-4f4d-b77f-80ff152cca06">
-              <TableID>dbo_REP_FactTable</TableID>
             </Source>
           </Source>
         </Measure>
@@ -408,16 +402,16 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a1ceb1fa-a2cf-411d-8391-a9603544f529">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c41e90d8-775a-49c6-8e03-0bd85b2d6a9a">
           <CubeDimensionID>REP Calendar</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="393addbf-02d0-42c1-acda-30cac106b151">
+            <Attribute dwd:design-time-name="04a9fdc6-5ffd-4aef-9776-445d60b0d64a">
               <AttributeID>Calendar ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4658145b-78a7-4dea-adf6-6451395ecea9">
+                <KeyColumn dwd:design-time-name="24295349-f971-4a27-8516-39d216728788">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="31c49e48-2add-44a1-bd41-11c64272bc99">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8ab31482-5b8f-41c6-86fe-4c611a2c55c3">
                     <TableID>dbo_REP_FactTable</TableID>
                     <ColumnID>CalendarID</ColumnID>
                   </Source>
@@ -427,16 +421,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c5612f5f-afae-414e-b829-6fed5f255c5e">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="222fbc06-9cbc-44da-91ea-72cb2b00292d">
           <CubeDimensionID>REP Description</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="701fe529-8495-4236-9e28-218f7f10f1c1">
+            <Attribute dwd:design-time-name="27ded010-8a19-4926-8f66-4340f7fca7a5">
               <AttributeID>Description ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="9576d659-62eb-4fcc-a197-43827b50c096">
+                <KeyColumn dwd:design-time-name="9fce9c80-daf5-41d7-9683-b75954f9397a">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1e85e1f3-4366-4d37-9580-6ac1b71fda2b">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="76be3bdf-c8b1-4b1c-b133-12e0d9c0693f">
                     <TableID>dbo_REP_FactTable</TableID>
                     <ColumnID>DescriptionID</ColumnID>
                   </Source>
@@ -446,16 +440,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="65fb6028-76a0-4cfd-a7c1-801f5bf5d400">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="76103190-f960-4b3c-a760-147606002045">
           <CubeDimensionID>REP Channel</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="6e92315c-4bb3-4e6d-8941-19609e37e005">
+            <Attribute dwd:design-time-name="a35d3921-4514-415e-a8e4-fead82cb9739">
               <AttributeID>Channel ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="18e78e71-2762-4309-935f-b783ea8dae16">
+                <KeyColumn dwd:design-time-name="c2019782-e908-4871-aff8-a5699efc2578">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e9be42e4-71cc-4537-8808-4d127c9354fd">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b15f9ebd-c32c-40d0-adbf-6f3dc0e4c8f0">
                     <TableID>dbo_REP_FactTable</TableID>
                     <ColumnID>ChannelID</ColumnID>
                   </Source>
@@ -465,133 +459,17 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="59caf630-10b0-4f2b-97aa-c1e03d41ce3a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="026192be-1e67-46d3-a257-b15ae323d220">
           <CubeDimensionID>REP Target Group</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="f6ceaa05-f863-4572-a66d-8806e15b1e30">
+            <Attribute dwd:design-time-name="615aadb9-1711-4974-b454-b701f09795ac">
               <AttributeID>Target Group ID</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e4e97079-d857-432d-95e1-3449b48a233b">
+                <KeyColumn dwd:design-time-name="d50f751d-81d0-4dd8-a258-ba6c07025f67">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fa38deac-1a7d-49f2-ad43-cf39a5063b20">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="921e86df-80b0-4c5c-928e-f714faa0867b">
                     <TableID>dbo_REP_FactTable</TableID>
-                    <ColumnID>TargetGroupID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="227f98be-d405-41b7-865c-7cff94e7baff">
-          <CubeDimensionID>REP Media Group</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="3e949d96-c230-4b11-8b4a-b8c1113d2629">
-              <AttributeID>Media Group ID</AttributeID>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-          <IntermediateCubeDimensionID>REP Channel</IntermediateCubeDimensionID>
-          <IntermediateGranularityAttributeID>Media Group ID</IntermediateGranularityAttributeID>
-          <Materialization>Regular</Materialization>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-        </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="369e8d62-e763-4424-8a64-9ea65b09bcd2">
-          <CubeDimensionID>REP Category</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="da31289a-6631-4cfd-aa33-5e0328000b80">
-              <AttributeID>Category ID</AttributeID>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-          <IntermediateCubeDimensionID>REP Channel</IntermediateCubeDimensionID>
-          <IntermediateGranularityAttributeID>Category ID</IntermediateGranularityAttributeID>
-          <Materialization>Regular</Materialization>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="3ee27d67-3b56-4e3e-934d-30cfc2c8f1b3">
-      <ID>REP Media Group</ID>
-      <Name>REP Media Group</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="7a684c5d-9903-4505-a632-91cf57cb441e">
-          <ID>REP Media Group Count</ID>
-          <Name>REP Media Group Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="5d115615-6b48-4d64-9355-56ee60b8fb31">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="55998b71-ce3f-43cd-9929-22dadaf7d4ba">
-              <TableID>dbo_REP_MediaGroup</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="47c5b271-4e8c-45ed-9525-04861b51b9f3">
-          <CubeDimensionID>REP Media Group</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="6fa4d848-da22-4a3f-ba95-ec5b07048947">
-              <AttributeID>Media Group ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="ae81ca85-d80b-4f94-b0aa-bfdead7eb325">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1d07e504-e79f-4687-a286-b99046635152">
-                    <TableID>dbo_REP_MediaGroup</TableID>
-                    <ColumnID>MediaGroupID</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-      </Dimensions>
-      <Partitions />
-    </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="334391ee-80ef-4eea-bf68-b747eb4f0a43">
-      <ID>REP Target Group</ID>
-      <Name>REP Target Group</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Measures>
-        <Measure dwd:design-time-name="877ca87f-1588-42be-a49e-129e3781e9be">
-          <ID>REP Target Group Count</ID>
-          <Name>REP Target Group Count</Name>
-          <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="e0b871b7-8a33-4857-9796-5f1b3c0da3e6">
-            <DataType>Integer</DataType>
-            <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="a5df04e9-68dd-4e0d-a8ba-503b633bfa4f">
-              <TableID>dbo_REP_TargetGroup</TableID>
-            </Source>
-          </Source>
-        </Measure>
-      </Measures>
-      <StorageMode>Molap</StorageMode>
-      <ProcessingMode>Regular</ProcessingMode>
-      <Dimensions>
-        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b7ead403-e4f9-4a37-ac16-ade275f6b2b8">
-          <CubeDimensionID>REP Target Group</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="9a3d8968-9aa0-4e5b-9b49-d690250c4146">
-              <AttributeID>Target Group ID</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="586302a1-5234-4056-9997-5e8585ef02dc">
-                  <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ed6e19f8-169a-4d43-a499-43caf26687c3">
-                    <TableID>dbo_REP_TargetGroup</TableID>
                     <ColumnID>TargetGroupID</ColumnID>
                   </Source>
                 </KeyColumn>
@@ -604,7 +482,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="b65c1b8d-cc64-43fb-ae48-f03045c31d66">
+  <Source dwd:design-time-name="f33f7e52-a586-43c0-966e-0471392d2a64">
     <DataSourceViewID>HD</DataSourceViewID>
   </Source>
 </Cube>

@@ -24,20 +24,12 @@
       <FullPath>REP Calendar.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>REP Category.dim</Name>
-      <FullPath>REP Category.dim</FullPath>
+      <Name>REP Channel.dim</Name>
+      <FullPath>REP Channel.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>REP Description.dim</Name>
       <FullPath>REP Description.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>REP Media Group 1.dim</Name>
-      <FullPath>REP Media Group 1.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>REP Channel.dim</Name>
-      <FullPath>REP Channel.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>REP Target Group 1.dim</Name>
