@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Integration Services Project1", "Integration Services Project1\Integration Services Project1.dtproj", "{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}"
 EndProject
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MultidimensionalProject1", "MultidimensionalProject1\MultidimensionalProject1.dwproj", "{83254E3A-139C-41DB-9931-29DC72A5A546}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MultidimensionalProject2", "MultidimensionalProject2\MultidimensionalProject2.dwproj", "{CDCA7E5C-2B02-49D9-AC5F-A32025CB3C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}.Development|x86.ActiveCfg = Development
 		{84B6BCE0-696D-4C0A-9323-8E973A63F0BA}.Development|x86.Build.0 = Development
-		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.ActiveCfg = Development
-		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.Build.0 = Development
-		{83254E3A-139C-41DB-9931-29DC72A5A546}.Development|x86.Deploy.0 = Development
+		{CDCA7E5C-2B02-49D9-AC5F-A32025CB3C08}.Development|x86.ActiveCfg = Development
+		{CDCA7E5C-2B02-49D9-AC5F-A32025CB3C08}.Development|x86.Build.0 = Development
+		{CDCA7E5C-2B02-49D9-AC5F-A32025CB3C08}.Development|x86.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="198"
-  DTS:VersionGUID="{BCA34667-8F1C-4708-A20E-03A5774112A4}">
+  DTS:VersionBuild="222"
+  DTS:VersionGUID="{942CE521-FD0A-4572-BD8F-93D8A8605CE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -251,20 +251,20 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Modyfikacja tabel"
+      DTS:refId="Package\Modyfikacja tabel STAGE"
       DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:Description="Execute T-SQL Statement Task"
       DTS:DTSID="{7F16E13B-5BEC-4968-901B-FD699B1A6D17}"
       DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Modyfikacja tabel"
+      DTS:ObjectName="Modyfikacja tabel STAGE"
       DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="CREATE TABLE [HD].[dbo].[dane] (&#xA;    [&quot;Date&quot;] varchar(max),&#xA;    [&quot;Channel&quot;] varchar(max),&#xA;    [&quot;Description&quot;] varchar(max),&#xA;    [&quot;2nd Description&quot;] varchar(max),&#xA;    [&quot;Start time&quot;] varchar(max),&#xA;    [&quot;Duration&quot;] varchar(max),&#xA;    [&quot;Variable Target&quot;] varchar(max),&#xA;    [&quot;Total Individuals&quot;] varchar(max),&#xA;    [&quot;Podgrupa&quot;] varchar(max),&#xA;    [&quot;A16-49&quot;] varchar(max),&#xA;    [&quot;M16-49&quot;] varchar(max),&#xA;    [&quot;A4-15&quot;] varchar(max),&#xA;    [&quot;A4-9&quot;] varchar(max),&#xA;    [Column 13] varchar(50)&#xA;)&#xA;&#xA;INSERT INTO [HD].[dbo].[dane] SELECT * FROM [HD].[dbo].[STAGE_dane]&#xA;&#xA;Alter table [HD].[dbo].[dane]&#xA;Drop Column [Column 13]&#xA;&#xA;Declare  @Date varchar(100),@Channel varchar(100), @Description varchar(100), @2ndDescription varchar(100),@Starttime varchar(100), @Duration varchar(100),&#xA;&#x9;&#x9; @DateTmp varchar(100),@ChannelTmp varchar(100), @DescriptionTmp varchar(100), @2ndDescriptionTmp varchar(100),@StarttimeTmp varchar(100), @DurationTmp varchar(100);&#xA;&#xA;DECLARE update_cursor CURSOR FOR &#xA;SELECT [&quot;Date&quot;],[&quot;Channel&quot;],[&quot;Description&quot;],[&quot;2nd Description&quot;],[&quot;Start time&quot;],[&quot;Duration&quot;]&#xA;from [HD].[dbo].[dane]&#xA;&#xA;OPEN update_cursor&#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;if @Date !='' set @DateTmp = @Date;&#xA;update [HD].[dbo].[dane] set [&quot;Date&quot;] = @DateTmp where CURRENT of update_cursor; &#xA;if @Channel !=''  set @ChannelTmp = @Channel;&#xA;update [HD].[dbo].[dane] set [&quot;Channel&quot;] = @ChannelTmp where CURRENT of update_cursor; &#xA;if @Description !=''  set @DescriptionTmp = @Description;&#xA;update [HD].[dbo].[dane] set [&quot;Description&quot;] = @DescriptionTmp where CURRENT of update_cursor; &#xA;if @2ndDescription !=''  set @2ndDescriptionTmp = @2ndDescription;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = @2ndDescriptionTmp where CURRENT of update_cursor; &#xA;if @Starttime !=''  set @StarttimeTmp = @Starttime;&#xA;update [HD].[dbo].[dane] set [&quot;Start time&quot;] = @StarttimeTmp where CURRENT of update_cursor; &#xA;if @Duration !=''  set @DurationTmp = @Duration;&#xA;update [HD].[dbo].[dane] set [&quot;Duration&quot;] = @DurationTmp where CURRENT of update_cursor; &#xA;FETCH NEXT FROM update_cursor into @Date,@Channel,@Description,@2ndDescription,@Starttime,@Duration&#xA;END&#xA;close update_cursor&#xA;Deallocate update_cursor&#xA;GO&#xA;&#xA;&#xA;update [HD].[dbo].[dane] set [&quot;2nd Description&quot;] = '' where [&quot;Description&quot;] = 'PROMO';&#xA;&#xA;&#xA;&#x9;CREATE TABLE [HD].[dbo].[przejsciowa] (&#xA;    [&quot;Date&quot;] Date,&#xA;    [&quot;Channel&quot;] varchar(max),&#xA;    [&quot;Description&quot;] varchar(max),&#xA;    [&quot;2nd Description&quot;] varchar(max),&#xA;    [&quot;Start time&quot;] time(0),&#xA;    [&quot;Duration&quot;] time(0),&#xA;    [&quot;Variable Target&quot;] varchar(max),&#xA;    [&quot;Total Individuals&quot;] float,&#xA;    [&quot;Podgrupa&quot;] float,&#xA;    [&quot;A16-49&quot;] float,&#xA;    [&quot;M16-49&quot;] float,&#xA;    [&quot;A4-15&quot;] float,&#xA;    [&quot;A4-9&quot;] float&#xA;)&#xA;&#xA;&#xA;Drop table if exists [HD].[dbo].[grupy]&#xA;&#xA;CREATE TABLE [HD].[dbo].[grupy] (&#xA;    [Number] numeric(30) ,&#xA;    [Channel] varchar(30),&#xA;    [GroupName] varchar(30)&#xA;)&#xA;&#xA;Declare @Number numeric(10), @Channel varchar(30), @GroupName varchar(30);&#xA;DECLARE insert_cursor CURSOR FOR &#xA;SELECT [F1],[F2] from [HD].[dbo].[STAGE_grupy_mediowe];&#xA;&#xA;OPEN insert_cursor&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NULL set @GroupName = @Channel;&#xA;&#xA;WHILE @@FETCH_STATUS=0&#xA;BEGIN&#xA;&#xA;Insert into [HD].[dbo].[grupy]&#xA;SELECT @Number,@Channel,@GroupName&#xA;&#xA;FETCH NEXT FROM insert_cursor into @Number,@Channel&#xA;if @Number is NuLL set @GroupName = @Channel;&#xA;END&#xA;delete from [HD].[dbo].[grupy] where Number is NULL;&#xA;close insert_cursor&#xA;Deallocate insert_cursor&#xA;GO&#xA;&#xA;&#xA;CREATE TABLE [HD].[dbo].[category] (&#xA;    [channel] varchar(max),&#xA;    [category] varchar(max)&#xA;)&#xA;INSERT INTO [HD].[dbo].[category] SELECT * FROM [HD].[dbo].[STAGE_kategorie]&#xA;delete from [HD].[dbo].[category] where channel is NULL&#xA;&#xA;exec [HD].[dbo].[replace_dane];&#xA;exec [HD].[dbo].[cast_data_in_dane];&#xA;exec [HD].[dbo].[mod_channel_in_dane];&#xA;exec [HD].[dbo].[pivot_przejsciowa];&#xA;"
+          SQLTask:SqlStatementSource="&#xA;&#xA;exec [HD].[dbo].[Proc_STAGE_mod];&#xA;&#xA;exec [HD].[dbo].[cast_data_in_dane];&#xA;exec [HD].[dbo].[mod_channel_in_dane];&#xA;exec [HD].[dbo].[pivot_przejsciowa];&#xA;"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -286,7 +286,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="truncate table [HD].[dbo].[STAGE_dane]&#xA;truncate table [HD].[dbo].[STAGE_kategorie]&#xA;truncate table [HD].[dbo].[STAGE_grupy_mediowe]&#xA;truncate table [HD].[dbo].[STAGE_target_groups]"
+          SQLTask:SqlStatementSource="exec [HD].[dbo].[STAGE_truncate];"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -308,7 +308,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95189044-2AAE-4263-8A19-76886452D891}"
-          SQLTask:SqlStatementSource="CREATE TABLE  [HD].[dbo].[REP_TargetGroup] (&#xA;    [TargetGroupID]  int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [TargetGroupCode] varchar(max),&#xA;    [TargetGroupName] varchar(max)&#xA;)&#xA;CREATE TABLE  [HD].[dbo].[REP_MediaGroup] (&#xA;    [MediaGroupID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Category] (&#xA;    [CategoryID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [CategoryName] varchar(max)&#xA;)&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Calendar] (&#xA;    [CalendarID] int PRIMARY KEY IDENTITY(1,1),&#xA;    [Date] date, &#xA;    [DayOfWeek] varchar(max),&#xA;    [CalendarMonth] varchar(max),&#xA;    [HolydayIndicator] bit,&#xA;    [WeekdayIndicator] bit&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Channel] (&#xA;    [ChannelID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupID] int,&#xA;    Constraint [MediaGroupID] FOREIGN KEY ([MediaGroupID]) REFERENCES [HD].[dbo].[REP_MediaGroup]([MediaGroupID]),&#xA;    [CategoryID] int,&#xA;    Constraint [CategoryID] FOREIGN KEY ([CategoryID]) REFERENCES [HD].[dbo].[REP_Category]([CategoryID]),&#xA;    [ChannelName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Description] (&#xA;    [DescriptionID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [Description] varchar(max),&#xA;    [2nd Description] varchar(max)&#xA;)&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_FactTable] (&#xA;    [FactTableID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [CalendarID] int,&#xA;    Constraint [CalendarID] FOREIGN KEY ([CalendarID]) REFERENCES [HD].[dbo].[REP_Calendar]([CalendarID]),&#xA;&#xA;    [TargetGroupID] int,&#xA;    Constraint [TargetGroupID] FOREIGN KEY ([TargetGroupID]) REFERENCES [HD].[dbo].[REP_TargetGroup]([TargetGroupID]),&#xA;&#xA;    [ChannelID] int,&#xA;    Constraint [ChannelID] FOREIGN KEY ([ChannelID]) REFERENCES [HD].[dbo].[REP_Channel]([ChannelID]),&#xA;    &#xA;    [DescriptionID] int,&#xA;    Constraint [DescriptionID] FOREIGN KEY ([DescriptionID] ) REFERENCES [HD].[dbo].[REP_Description] ([DescriptionID] ),&#xA;&#xA;    [Starttime] time(0),&#xA;    [Duration] time(0),&#xA;    [AMR %] float,&#xA;    [SHR %] float,&#xA;    [RCH %] float,&#xA;    [RCH] float,&#xA;    [AMR] float&#xA;)"
+          SQLTask:SqlStatementSource="create table [HD].[dbo].[REP_Duration](&#xA;DurationID int identity (1,1) primary key,&#xA;Duration varchar(20)&#xA;);&#xA;&#xA;create table [HD].[dbo].[REP_Time](&#xA;[TimeID] int identity(1,1) PRIMARY KEY,&#xA;[Hour] varchar(2),&#xA;[Minute] varchar(2)&#xA;)&#xA;&#xA;create table [HD].[dbo].[REP_Calendar](&#xA;[CalendarID] int primary key identity(1,1),&#xA;[Date] Date,&#xA;[FullDataDescription] varchar(20),&#xA;[DayOfWeek] varchar(20),&#xA;[CalendarMonth] varchar(20),&#xA;[CalendarYear] varchar(20),&#xA;[FiscalYearMonth] varchar(20),&#xA;[WeekdayIndicator] varchar(20)&#xA;);&#xA;&#xA;create table [HD].[dbo].[REP_Date](&#xA;[DateID] int primary key identity(1,1),&#xA;[TimeID] int,&#xA;Constraint [TimeID] FOREIGN KEY ([TimeID]) REFERENCES [HD].[dbo].[REP_Time]([TimeID]),&#xA;[CalendarID] int,&#xA;Constraint [CalendarID] FOREIGN KEY ([CalendarID]) REFERENCES [HD].[dbo].[REP_Calendar]([CalendarID]),&#xA;[Film_Date] date,&#xA;[Radio_Hour] varchar(20),&#xA;[Hour] time(0)&#xA;);&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_TargetGroup] (&#xA;    [TargetGroupID]  int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [TargetGroupCode] varchar(max),&#xA;    [TargetGroupName] varchar(max)&#xA;)&#xA;CREATE TABLE  [HD].[dbo].[REP_MediaGroup] (&#xA;    [MediaGroupID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Category] (&#xA;    [CategoryID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [CategoryName] varchar(max)&#xA;)&#xA;&#xA;&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Channel] (&#xA;    [ChannelID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [MediaGroupID] int,&#xA;    Constraint [MediaGroupID] FOREIGN KEY ([MediaGroupID]) REFERENCES [HD].[dbo].[REP_MediaGroup]([MediaGroupID]),&#xA;    [CategoryID] int,&#xA;    Constraint [CategoryID] FOREIGN KEY ([CategoryID]) REFERENCES [HD].[dbo].[REP_Category]([CategoryID]),&#xA;    [ChannelName] varchar(max)&#xA;)&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_Description] (&#xA;    [DescriptionID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [Description] varchar(max),&#xA;    [2nd Description] varchar(max)&#xA;)&#xA;&#xA;&#xA;CREATE TABLE  [HD].[dbo].[REP_FactTable] (&#xA;    [FactTableID] int not null PRIMARY KEY IDENTITY(1,1),&#xA;    [DateID] int,&#xA;    Constraint [DateID] FOREIGN KEY ([DateID]) REFERENCES [HD].[dbo].[REP_Date]([DateID] ),&#xA;&#xA;    [TargetGroupID] int,&#xA;    Constraint [TargetGroupID] FOREIGN KEY ([TargetGroupID]) REFERENCES [HD].[dbo].[REP_TargetGroup]([TargetGroupID]),&#xA;&#xA;    [ChannelID] int,&#xA;    Constraint [ChannelID] FOREIGN KEY ([ChannelID]) REFERENCES [HD].[dbo].[REP_Channel]([ChannelID]),&#xA;    &#xA;    [DescriptionID] int,&#xA;    Constraint [DescriptionID] FOREIGN KEY ([DescriptionID] ) REFERENCES [HD].[dbo].[REP_Description] ([DescriptionID] ),&#xA;    &#xA;    [DurationID] int,&#xA;    Constraint [DurationID] FOREIGN KEY ([DurationID] ) REFERENCES [HD].[dbo].[REP_Duration] ([DurationID] ),&#xA;&#xA;    [Duration] time(0),&#xA;    [AMR %] float,&#xA;    [SHR %] float,&#xA;    [RCH %] float,&#xA;    [RCH] float,&#xA;    [AMR] float&#xA;)"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -330,7 +330,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="exec [HD].[dbo].[drop_table];&#xA;"
+          SQLTask:SqlStatementSource="exec [HD].[dbo].[Proc_REP_drop];&#xA;"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -1833,7 +1833,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{039AA969-3D8E-441D-8C5D-3980F6E8635D}"
-          SQLTask:SqlStatementSource="exec [HD].[dbo].[REP_load];&#xA;"
+          SQLTask:SqlStatementSource="exec [HD].[dbo].[Proc_Load_Cal];&#xA;exec [HD].[dbo].[Proc_REP_load];&#xA;"
           SQLTask:ServerVersion="9"
           SQLTask:ExtendedLogging="True"
           SQLTask:LocalConnectionForLogging=""
@@ -1850,12 +1850,12 @@
       DTS:From="Package\Załadowanie danych do STAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Modyfikacja tabel" />
+      DTS:To="Package\Modyfikacja tabel STAGE" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{928D49F0-47EF-43BD-AAE9-2011B8551459}"
-      DTS:From="Package\Modyfikacja tabel"
+      DTS:From="Package\Modyfikacja tabel STAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Usuwanie kluczy" />
@@ -1901,15 +1901,15 @@
           Id="Package\Ładowanie danych do repozytorium głównego"
           TopLeft="275.428576119092,417.223535263167" />
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\Modyfikacja tabel"
+          Size="195.2,41.6"
+          Id="Package\Modyfikacja tabel STAGE"
           TopLeft="278.285719024892,160.282355189076" />
         <NodeLayout
           Size="120,41.6"
           Id="Package\Truncate"
           TopLeft="281.142861930691,4.28235300123485" />
         <NodeLayout
-          Size="232.8,46.4"
+          Size="232.8,41.6"
           Id="Package\Tworzenie tabel do repozytorium"
           TopLeft="279.102045569406,317.331096887424" />
         <NodeLayout
@@ -1926,26 +1926,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-32.757142769561,31.8176481656145"
+              EndConnector="-15.157142769561,31.8176481656143"
               Start="0,0"
-              End="-32.757142769561,24.3176481656145">
+              End="-15.157142769561,24.3176481656143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.9088240828073" />
+                    End="0,11.9088240828071" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.9088240828073"
-                    Point2="0,15.9088240828073"
-                    Point3="-4,15.9088240828073" />
+                    Point1="0,11.9088240828071"
+                    Point2="0,15.9088240828071"
+                    Point3="-4,15.9088240828071" />
                   <mssgle:LineSegment
-                    End="-28.757142769561,15.9088240828073" />
+                    End="-11.157142769561,15.9088240828071" />
                   <mssgle:CubicBezierSegment
-                    Point1="-28.757142769561,15.9088240828073"
-                    Point2="-32.757142769561,15.9088240828073"
-                    Point3="-32.757142769561,19.9088240828073" />
+                    Point1="-11.157142769561,15.9088240828071"
+                    Point2="-15.157142769561,15.9088240828071"
+                    Point3="-15.157142769561,19.9088240828071" />
                   <mssgle:LineSegment
-                    End="-32.757142769561,24.3176481656145" />
+                    End="-15.157142769561,24.3176481656143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1956,18 +1956,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="357.000004734312,201.882355189076">
+          TopLeft="375.885719024892,201.882355189076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1647054190447"
+              EndConnector="-20.1714285811599,34.164705419045"
               Start="0,0"
-              End="0,26.6647054190447">
+              End="-20.1714285811599,26.664705419045">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6647054190447" />
+                    End="0,13.0823527095225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0823527095225"
+                    Point2="0,17.0823527095225"
+                    Point3="-4,17.0823527095225" />
+                  <mssgle:LineSegment
+                    End="-16.1714285811599,17.0823527095225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.1714285811599,17.0823527095225"
+                    Point2="-20.1714285811599,17.0823527095225"
+                    Point3="-20.1714285811599,21.0823527095225" />
+                  <mssgle:LineSegment
+                    End="-20.1714285811599,26.664705419045" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2046,30 +2058,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="395.502045569406,363.731096887424">
+          TopLeft="395.502045569406,358.931096887424">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27.5265305496862,53.4924383757432"
+              EndConnector="27.526530549686,58.292438375743"
               Start="0,0"
-              End="27.5265305496862,45.9924383757432">
+              End="27.526530549686,50.792438375743">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.7462191878716" />
+                    End="0,25.1462191878715" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.7462191878716"
-                    Point2="0,26.7462191878716"
-                    Point3="4,26.7462191878716" />
+                    Point1="0,25.1462191878715"
+                    Point2="0,29.1462191878715"
+                    Point3="4,29.1462191878715" />
                   <mssgle:LineSegment
-                    End="23.5265305496862,26.7462191878716" />
+                    End="23.526530549686,29.1462191878715" />
                   <mssgle:CubicBezierSegment
-                    Point1="23.5265305496862,26.7462191878716"
-                    Point2="27.5265305496862,26.7462191878716"
-                    Point3="27.5265305496862,30.7462191878716" />
+                    Point1="23.526530549686,29.1462191878715"
+                    Point2="27.526530549686,29.1462191878715"
+                    Point3="27.526530549686,33.1462191878715" />
                   <mssgle:LineSegment
-                    End="27.5265305496862,45.9924383757432" />
+                    End="27.526530549686,50.792438375743" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2085,7 +2097,7 @@
     design-time-name="Package\Załadowanie danych do STAGE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Załadowanie danych do STAGE\grupy_mediowe"
@@ -2149,9 +2161,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2185,9 +2195,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2221,9 +2229,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2245,9 +2251,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -12,10 +12,10 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>REP Target Group</ID>
+        <ID>REP Channel</ID>
       </Dimension>
       <Dimension>
-        <ID>REP Channel</ID>
+        <ID>REP Date</ID>
       </Dimension>
       <Dimension>
         <ID>REP Description</ID>
@@ -24,7 +24,10 @@
         <ID>REP Duration</ID>
       </Dimension>
       <Dimension>
-        <ID>REP Date</ID>
+        <ID>REP Target Group</ID>
+      </Dimension>
+      <Dimension>
+        <ID>REP Fact Table</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

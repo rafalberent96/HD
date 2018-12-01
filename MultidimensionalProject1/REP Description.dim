@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="220acdbb-ed09-4709-a3f8-afd02fdd7141" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b1034858-1988-4988-beb3-23e1cd4384f8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>REP Description</ID>
   <Name>REP Description</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -42,70 +42,28 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7e159a11-a984-4e8f-aa6a-84d263507ee1">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="85adf7d4-729c-4029-8ae5-913249f76779">
     <DataSourceViewID>HD</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="0643aaf4-02fe-49be-bdb0-e3a1bfb57ddc">
+  <ErrorConfiguration dwd:design-time-name="3db86cd3-7824-4eb8-ba0a-15096ca57f71">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="e63c3724-da8f-425d-a84e-3d66ed8ab282">
+    <Attribute dwd:design-time-name="5b4ecb74-4333-4c4d-9f13-513a949879c1">
       <ID>Description ID</ID>
       <Name>Description ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="bb3bf34d-22e8-44de-8c2d-3262b176977f">
+        <KeyColumn dwd:design-time-name="eaa665e8-3f36-412d-bae9-b00b1ac25662">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c3ad259-be9c-4681-977a-00c2ea996c66">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a1e2e99-f0bc-4019-b0b2-3040d2686dcb">
             <TableID>dbo_REP_Description</TableID>
             <ColumnID>DescriptionID</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="c7a97ed8-820e-4bb0-bd10-edaa9337ffd2">
-          <AttributeID>Description</AttributeID>
-          <Name>Description</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ce39e5af-19a9-4980-a1c1-46de7a8c1d19">
-          <AttributeID>2nd Description</AttributeID>
-          <Name>2nd Description</Name>
-        </AttributeRelationship>
-      </AttributeRelationships>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="2547cd81-b8f1-4104-8bcc-e7d55b82937b">
-      <ID>Description</ID>
-      <Name>Description</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="a4908ca9-23f9-4180-a019-3c98dd0dd5f4">
-          <DataType>WChar</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ce971ff-a09c-4ed8-9e38-7d54f3da2c7e">
-            <TableID>dbo_REP_Description</TableID>
-            <ColumnID>Description</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="01571b65-bb13-41cd-b733-e31bebf378c5">
-      <ID>2nd Description</ID>
-      <Name>2nd Description</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="2b55b679-7388-4ec2-8ed7-00abbb7a7bb0">
-          <DataType>WChar</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="49fbac85-aa1d-4324-a392-db17397e5603">
-            <TableID>dbo_REP_Description</TableID>
-            <ColumnID>_x0032_nd_x0020_Description</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>

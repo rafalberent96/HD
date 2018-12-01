@@ -1,6 +1,6 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
-    <Database>MultidimensionalProject1</Database>
+    <Database>MultidimensionalProject2</Database>
     <Server>localhost</Server>
     <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
   </Target>
@@ -19,56 +19,63 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>K+f4dJov/gGfQdvF+w7dkJ8/kJY=14.06.2018 22:19:1414.06.2018 22:19:14</TimeStamp>
+        <TimeStamp>fg0zupJO8ooTbRWPHxBZ8++8qYQ=15.06.2018 05:07:0514.06.2018 22:43:42</TimeStamp>
         <ID>
           <String>HD</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>B0IuMOriGUbKQbs3wE9Q5vZAyWE=14.06.2018 22:19:2914.06.2018 22:19:29</TimeStamp>
+        <TimeStamp>jTRJ/Ov/jP74YmEFeAk3nGx5Bng=15.06.2018 05:07:2715.06.2018 05:07:26</TimeStamp>
         <ID>
           <String>HD</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>s8X3wAeR82UM685gm5VokQUMsG8=14.06.2018 22:19:4714.06.2018 22:19:47</TimeStamp>
-        <ID>
-          <String>REP Target Group</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>je4lrgAzdl9YrjA1e69Uw0YisD0=14.06.2018 22:33:0714.06.2018 22:19:47</TimeStamp>
+        <TimeStamp>2x3L1L0gALaGbvMV8HMprPTlvno=15.06.2018 05:07:4915.06.2018 05:07:49</TimeStamp>
         <ID>
           <String>REP Channel</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>8EKX1pcCAp9Sbw95vnvqZ6ezRi8=14.06.2018 22:19:4714.06.2018 22:19:47</TimeStamp>
+        <TimeStamp>vwwd2vzaIgG4MhcWOq9PUE3wRtM=15.06.2018 05:08:1015.06.2018 05:08:10</TimeStamp>
+        <ID>
+          <String>REP Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fTSgwWKKjfLw5YmFJqGjOqZ+HLk=15.06.2018 05:08:2615.06.2018 05:08:26</TimeStamp>
         <ID>
           <String>REP Description</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>JaU8J81yIZXzNkXhpFrYiWoMRCA=14.06.2018 22:19:4714.06.2018 22:19:47</TimeStamp>
+        <TimeStamp>qP8/tyqGFVrcYbkNvMRV3cS0KA0=15.06.2018 05:08:4215.06.2018 05:08:41</TimeStamp>
         <ID>
           <String>REP Duration</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>JoI4W/F6azPcbEJ2Povu7TpKsF4=14.06.2018 22:19:4714.06.2018 22:19:47</TimeStamp>
+        <TimeStamp>gT0pVJhzE58OwFw6zcGQvXH5uho=15.06.2018 05:09:0215.06.2018 05:09:02</TimeStamp>
         <ID>
-          <String>REP Date</String>
+          <String>REP Target Group</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>78o4BM0nePaz7KjUHZSsLtLw5Ks=15.06.2018 09:17:5315.06.2018 09:17:53</TimeStamp>
+        <ID>
+          <String>REP Fact Table</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>9SsH6ciQ+RQ1LJUo6v0j1oYHdeg=14.06.2018 22:33:0714.06.2018 22:19:47KkZmvXCGp8Y2pLOcaUmkwXZsqm4=14.06.2018 22:19:4714.06.2018 22:19:47</TimeStamp>
+        <TimeStamp>3b4wJ6/cOL2z5WtBLAGJVjyKPJQ=15.06.2018 09:37:4515.06.2018 09:37:45XAKBke0VxvE7ZyOG7xz+RWctdcg=15.06.2018 09:37:4515.06.2018 09:37:45</TimeStamp>
         <ID>
           <String>HD</String>
         </ID>
@@ -76,14 +83,14 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>o2cJ55toCobSM3IQPn0nwrlx9U8=09.05.2018 06:34:2309.05.2018 06:34:22</TimeStamp>
+      <TimeStamp>ijA8KNHA/7p4HQrQ45cKTs6BCL4=14.06.2018 22:43:1414.06.2018 22:43:13</TimeStamp>
       <ID>
-        <String>MultidimensionalProject1</String>
+        <String>MultidimensionalProject2</String>
       </ID>
     </DatabaseSnapshot>
     <Granularity>Coarse</Granularity>
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>false</ProcessingComplete>
-  <LastDeployed>2018-06-14T20:33:35.56Z</LastDeployed>
+  <LastDeployed>2018-06-15T07:38:58.186667Z</LastDeployed>
 </DeploymentSnapshot>

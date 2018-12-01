@@ -1,6 +1,6 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="68656474-86f1-43fb-8bd7-489299a08b31" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>REP Target Group</ID>
-  <Name>REP Target Group</Name>
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="14879b41-fc80-424d-895f-abc87a177cdd" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>REP Fact Table</ID>
+  <Name>REP Fact Table</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -42,28 +42,26 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bea7464c-09e1-4392-a3fd-684c2d169c2d">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3abcd641-4e53-44b9-bab9-701ce687c96c">
     <DataSourceViewID>HD</DataSourceViewID>
   </Source>
-  <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="54b1c867-af30-4b78-b8ed-96a17c2252f9">
+  <ErrorConfiguration dwd:design-time-name="2f0622ad-eb84-4323-ac9b-daf38ed712f9">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="70427ca7-3e28-41be-9e4e-afe9cb13d2ab">
-      <ID>Target Group ID</ID>
-      <Name>Target Group ID</Name>
+    <Attribute dwd:design-time-name="4b0c1bea-63c5-4abf-a908-ba1dd2e8e225">
+      <ID>Fact Table ID</ID>
+      <Name>Fact Table ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="69959c0c-3085-46c3-8bd3-25c5ecee294a">
+        <KeyColumn dwd:design-time-name="4244dede-aa8e-4a39-9ed5-07dc0a8078a5">
           <DataType>Integer</DataType>
-          <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="aa6be59b-2a60-42bc-915d-6feb742ccbcc">
-            <TableID>dbo_REP_TargetGroup</TableID>
-            <ColumnID>TargetGroupID</ColumnID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e39a6713-6fb0-42e8-9307-8b5489d95f2e">
+            <TableID>dbo_REP_FactTable</TableID>
+            <ColumnID>FactTableID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
